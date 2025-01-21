@@ -15,15 +15,20 @@ kcode 5000 1.0 5 100
 ksrc 0 0 0
 C Tally Cards
 fc6 Heating per Neutron   HpN
-f6:n 1
+f6:n 1 
 sd6  1
 c
 fc16 Actual Core Power (ACP) [MW] TCP=1MW HpN=100 MeV/n
 c  FM=TCP/HpN=0.01
 c  S=TCP/HpP/1.602e-19= 1.8727e18
-f16:n  1
-fm16:n 0.01
-sd16    1
-F1:n 1 2
+c  S=0.01/1.602e-19= 6.24e16
+f16:n  1 $ actual core power
+fm16:n 0.01 $ multiplication factor
+sd16    1 $ standard deviation
+F1:n 1 2 
 F2:n 1 2
-C1:n -1 0 1
+F4:n 1
+F14:n 2
+F4m:n -1 1 (-2:-6) $ absorption 
+F14m:n -19.84 2 (-2:-6) $ 
+C1:n -1 0 1 $ in / out

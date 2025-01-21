@@ -31,8 +31,8 @@
  |     liability or responsibility for the use of this software.      |
  +--------------------------------------------------------------------+
   
-1mcb      version 5.mpi ld=05042024                     01/21/25 21:46:49 
- *************************************************************************                 probid =  01/21/25 21:46:49 
+1mcb      version 5.mpi ld=05042024                     01/21/25 23:26:09 
+ *************************************************************************                 probid =  01/21/25 23:26:09 
  n=bor                                                                           
 
     1-       C Cell Cards                                                                    
@@ -58,12 +58,17 @@
    21-       fc16 Actual Core Power (ACP) [MW] TCP=1MW HpN=100 MeV/n                         
    22-       c  FM=TCP/HpN=0.01                                                              
    23-       c  S=TCP/HpP/1.602e-19= 1.8727e18                                               
-   24-       f16:n  1                                                                        
-   25-       fm16:n 0.01                                                                     
-   26-       sd16    1                                                                       
-   27-       F1:n 1 2                                                                        
-   28-       F2:n 1 2                                                                        
-   29-       C1:n -1 0 1                                                                     
+   24-       c  S=0.01/1.602e-19= 6.24e16                                                    
+   25-       f16:n  1 $ actual core power                                                    
+   26-       fm16:n 0.01 $ multiplication factor                                             
+   27-       sd16    1 $ standard deviation                                                  
+   28-       F1:n 1 2                                                                        
+   29-       F2:n 1 2                                                                        
+   30-       F4:n 1                                                                          
+   31-       F14:n 2                                                                         
+   32-       F4m:n -1 1 (-2:-6) $ absorption                                                 
+   33-       F14m:n -19.84 2 (-2:-6) $                                                       
+   34-       C1:n -1 0 1 $ in / out                                                          
  
  comment. total fission nubar data are being used.
  
@@ -112,34 +117,34 @@
   source distribution written to file bor.srctp cycle =0
 
          2 warning messages so far.
- master starting      47 tasks with       1 threads each  01/21/25 21:46:52 
- master set rendezvous nps =         200    01/21/25 21:46:52 
- master set rendezvous nps =        5000    01/21/25 21:46:52 
+ master starting      47 tasks with       1 threads each  01/21/25 23:26:11 
+ master set rendezvous nps =         200    01/21/25 23:26:11 
+ master set rendezvous nps =        5000    01/21/25 23:26:11 
 1estimated keff results by cycle                                                                        print table 175
 
  cycle     1    k(collision)  1.389073    prompt removal lifetime(abs)  3.0766E+01    source points generated   6985
                                           source_entropy =     5.0255E+00
- master set rendezvous nps =       11985    01/21/25 21:46:52 
+ master set rendezvous nps =       11985    01/21/25 23:26:11 
 
  cycle     2    k(collision)  1.189392    prompt removal lifetime(abs)  4.1201E+01    source points generated   4285
                                           source_entropy =     5.5574E+00
- master set rendezvous nps =       16270    01/21/25 21:46:52 
+ master set rendezvous nps =       16270    01/21/25 23:26:11 
 
  cycle     3    k(collision)  1.110162    prompt removal lifetime(abs)  4.4763E+01    source points generated   4673
                                           source_entropy =     5.7157E+00
- master set rendezvous nps =       20943    01/21/25 21:46:52 
+ master set rendezvous nps =       20943    01/21/25 23:26:11 
 
  cycle     4    k(collision)  1.070127    prompt removal lifetime(abs)  4.3601E+01    source points generated   4838
                                           source_entropy =     5.7620E+00
- master set rendezvous nps =       25781    01/21/25 21:46:52 
+ master set rendezvous nps =       25781    01/21/25 23:26:11 
 
  cycle     5    k(collision)  1.057371    prompt removal lifetime(abs)  4.5126E+01    source points generated   4859
                                           source_entropy =     5.7992E+00
- master set rendezvous nps =       30640    01/21/25 21:46:52 
+ master set rendezvous nps =       30640    01/21/25 23:26:11 
 
  cycle     6    k(collision)  1.047905    prompt removal lifetime(abs)  5.1352E+01    source points generated   4898
                                           source_entropy =     5.8238E+00
- master set rendezvous nps =       35538    01/21/25 21:46:52 
+ master set rendezvous nps =       35538    01/21/25 23:26:11 
 
   estimator     cycle     7   ave of     2 cycles      combination         simple average    combined average     corr
  k(collision)      1.066563       1.057234 0.0088     k(col/abs)          0.000000 0.0000     0.000000 0.0000   0.0000
@@ -148,7 +153,7 @@
  rem life(col)   3.9507E+01     4.5008E+01 0.1222
  rem life(abs)   3.9002E+01     4.5177E+01 0.1367     life(col/abs)     0.0000E+00 0.0000   0.0000E+00 0.0000   0.0000
  source points generated   5150                source_entropy  5.7900E+00
- master set rendezvous nps =       40688    01/21/25 21:46:52 
+ master set rendezvous nps =       40688    01/21/25 23:26:11 
 
   estimator     cycle     8   ave of     3 cycles      combination         simple average    combined average     corr
  k(collision)      1.049113       1.054527 0.0057     k(col/abs)          1.054527 0.0057     1.054527 0.0057   1.0000
@@ -157,7 +162,7 @@
  rem life(col)   4.7214E+01     4.5743E+01 0.0713
  rem life(abs)   4.7347E+01     4.5900E+01 0.0793     life(col/abs)     4.5822E+01 0.0753   4.4473E+01 0.0276   0.9996
  source points generated   4960                source_entropy  5.8113E+00
- master set rendezvous nps =       45648    01/21/25 21:46:52 
+ master set rendezvous nps =       45648    01/21/25 23:26:11 
 
   estimator     cycle     9   ave of     4 cycles      combination         simple average    combined average     corr
  k(collision)      1.058682       1.055566 0.0042     k(col/abs)          1.055566 0.0042     1.055566 0.0042   1.0000
@@ -166,8 +171,8 @@
  rem life(col)   4.5993E+01     4.5806E+01 0.0503     k(col/abs/tk ln)    1.053276 0.0044     1.059791 0.0102
  rem life(abs)   4.5682E+01     4.5846E+01 0.0561     life(col/abs/tl)  4.5924E+01 0.0550   4.4560E+01 0.0214
  source points generated   5117                source_entropy  5.7956E+00
- master set rendezvous nps =       50000    01/21/25 21:46:52 
- master set rendezvous nps =       50765    01/21/25 21:46:52 
+ master set rendezvous nps =       50000    01/21/25 23:26:11 
+ master set rendezvous nps =       50765    01/21/25 23:26:11 
 
   estimator     cycle    10   ave of     5 cycles      combination         simple average    combined average     corr
  k(collision)      1.049317       1.054316 0.0034     k(col/abs)          1.054316 0.0034     1.054316 0.0034   1.0000
@@ -176,7 +181,7 @@
  rem life(col)   4.2488E+01     4.5142E+01 0.0422     k(col/abs/tk ln)    1.052943 0.0034     1.053610 0.0047
  rem life(abs)   4.2847E+01     4.5246E+01 0.0460     life(col/abs/tl)  4.5301E+01 0.0453   4.3567E+01 0.0422
  source points generated   4966                source_entropy  5.7906E+00
- master set rendezvous nps =       55731    01/21/25 21:46:52 
+ master set rendezvous nps =       55731    01/21/25 23:26:11 
 
   estimator     cycle    11   ave of     6 cycles      combination         simple average    combined average     corr
  k(collision)      1.039776       1.051893 0.0036     k(col/abs)          1.051893 0.0036     1.051893 0.0036   1.0000
@@ -185,7 +190,7 @@
  rem life(col)   4.6515E+01     4.5371E+01 0.0347     k(col/abs/tk ln)    1.050585 0.0036     1.050952 0.0048
  rem life(abs)   4.5866E+01     4.5349E+01 0.0375     life(col/abs/tl)  4.5480E+01 0.0371   4.3704E+01 0.0375
  source points generated   5090                source_entropy  5.7974E+00
- master set rendezvous nps =       60821    01/21/25 21:46:52 
+ master set rendezvous nps =       60821    01/21/25 23:26:11 
 
   estimator     cycle    12   ave of     7 cycles      combination         simple average    combined average     corr
  k(collision)      1.040702       1.050294 0.0034     k(col/abs)          1.050294 0.0034     1.050294 0.0034   1.0000
@@ -194,7 +199,7 @@
  rem life(col)   4.8617E+01     4.5835E+01 0.0307     k(col/abs/tk ln)    1.049033 0.0034     1.049221 0.0045
  rem life(abs)   4.7782E+01     4.5697E+01 0.0324     life(col/abs/tl)  4.5908E+01 0.0324   4.3617E+01 0.0343
  source points generated   4923                source_entropy  5.8146E+00
- master set rendezvous nps =       65744    01/21/25 21:46:52 
+ master set rendezvous nps =       65744    01/21/25 23:26:11 
 
   estimator     cycle    13   ave of     8 cycles      combination         simple average    combined average     corr
  k(collision)      1.047761       1.049977 0.0030     k(col/abs)          1.049977 0.0030     1.049977 0.0030   1.0000
@@ -203,7 +208,7 @@
  rem life(col)   4.1599E+01     4.5305E+01 0.0293     k(col/abs/tk ln)    1.048288 0.0030     1.049368 0.0042
  rem life(abs)   4.1423E+01     4.5163E+01 0.0308     life(col/abs/tl)  4.5363E+01 0.0308   4.3158E+01 0.0303
  source points generated   4936                source_entropy  5.8259E+00
- master set rendezvous nps =       70680    01/21/25 21:46:52 
+ master set rendezvous nps =       70680    01/21/25 23:26:11 
 
   estimator     cycle    14   ave of     9 cycles      combination         simple average    combined average     corr
  k(collision)      1.036212       1.048448 0.0030     k(col/abs)          1.048448 0.0030     1.048448 0.0030   1.0000
@@ -212,7 +217,7 @@
  rem life(col)   4.6009E+01     4.5383E+01 0.0259     k(col/abs/tk ln)    1.047299 0.0028     1.046936 0.0033
  rem life(abs)   4.6430E+01     4.5303E+01 0.0272     life(col/abs/tl)  4.5516E+01 0.0273   4.3572E+01 0.0346
  source points generated   5013                source_entropy  5.8095E+00
- master set rendezvous nps =       75693    01/21/25 21:46:52 
+ master set rendezvous nps =       75693    01/21/25 23:26:11 
 
   estimator     cycle    15   ave of    10 cycles      combination         simple average    combined average     corr
  k(collision)      1.026866       1.046290 0.0034     k(col/abs)          1.046290 0.0034     1.046290 0.0034   1.0000
@@ -221,7 +226,7 @@
  rem life(col)   4.4158E+01     4.5261E+01 0.0234     k(col/abs/tk ln)    1.045273 0.0032     1.044524 0.0036
  rem life(abs)   4.2676E+01     4.5041E+01 0.0252     life(col/abs/tl)  4.5303E+01 0.0250   4.3666E+01 0.0319
  source points generated   4962                source_entropy  5.8281E+00
- master set rendezvous nps =       80655    01/21/25 21:46:52 
+ master set rendezvous nps =       80655    01/21/25 23:26:11 
 
   estimator     cycle    16   ave of    11 cycles      combination         simple average    combined average     corr
  k(collision)      1.054335       1.047021 0.0032     k(col/abs)          1.047021 0.0032     1.047021 0.0032   1.0000
@@ -230,7 +235,7 @@
  rem life(col)   4.8897E+01     4.5591E+01 0.0222     k(col/abs/tk ln)    1.046035 0.0030     1.045355 0.0034
  rem life(abs)   4.8680E+01     4.5372E+01 0.0237     life(col/abs/tl)  4.5611E+01 0.0234   4.4858E+01 0.0312
  source points generated   5083                source_entropy  5.8242E+00
- master set rendezvous nps =       85738    01/21/25 21:46:52 
+ master set rendezvous nps =       85738    01/21/25 23:26:11 
 
   estimator     cycle    17   ave of    12 cycles      combination         simple average    combined average     corr
  k(collision)      1.051165       1.047366 0.0029     k(col/abs)          1.047366 0.0029     1.047366 0.0029   1.0000
@@ -239,7 +244,7 @@
  rem life(col)   4.8494E+01     4.5833E+01 0.0208     k(col/abs/tk ln)    1.046220 0.0027     1.045399 0.0032
  rem life(abs)   4.7881E+01     4.5581E+01 0.0221     life(col/abs/tl)  4.5813E+01 0.0218   4.5531E+01 0.0295
  source points generated   4866                source_entropy  5.8357E+00
- master set rendezvous nps =       90604    01/21/25 21:46:52 
+ master set rendezvous nps =       90604    01/21/25 23:26:11 
 
   estimator     cycle    18   ave of    13 cycles      combination         simple average    combined average     corr
  k(collision)      1.070580       1.049152 0.0032     k(col/abs)          1.049152 0.0032     1.049152 0.0032   1.0000
@@ -248,7 +253,7 @@
  rem life(col)   4.4780E+01     4.5752E+01 0.0193     k(col/abs/tk ln)    1.047959 0.0030     1.046860 0.0035
  rem life(abs)   4.4206E+01     4.5475E+01 0.0205     life(col/abs/tl)  4.5702E+01 0.0202   4.5530E+01 0.0266
  source points generated   5066                source_entropy  5.8543E+00
- master set rendezvous nps =       95670    01/21/25 21:46:52 
+ master set rendezvous nps =       95670    01/21/25 23:26:12 
 
   estimator     cycle    19   ave of    14 cycles      combination         simple average    combined average     corr
  k(collision)      1.039103       1.048434 0.0030     k(col/abs)          1.048434 0.0030     1.048434 0.0030   1.0000
@@ -257,8 +262,8 @@
  rem life(col)   5.0082E+01     4.6062E+01 0.0190     k(col/abs/tk ln)    1.047492 0.0028     1.046481 0.0031
  rem life(abs)   4.8702E+01     4.5705E+01 0.0195     life(col/abs/tl)  4.5941E+01 0.0193   4.5918E+01 0.0276
  source points generated   4850                source_entropy  5.8228E+00
- master set rendezvous nps =      100000    01/21/25 21:46:53 
- master set rendezvous nps =      100520    01/21/25 21:46:53 
+ master set rendezvous nps =      100000    01/21/25 23:26:12 
+ master set rendezvous nps =      100520    01/21/25 23:26:12 
 
   estimator     cycle    20   ave of    15 cycles      combination         simple average    combined average     corr
  k(collision)      1.042993       1.048071 0.0028     k(col/abs)          1.048071 0.0028     1.048071 0.0028   1.0000
@@ -267,7 +272,7 @@
  rem life(col)   4.1744E+01     4.5774E+01 0.0188     k(col/abs/tk ln)    1.047113 0.0026     1.046103 0.0029
  rem life(abs)   4.1935E+01     4.5454E+01 0.0191     life(col/abs/tl)  4.5672E+01 0.0190   4.5422E+01 0.0264
  source points generated   5077                source_entropy  5.8455E+00
- master set rendezvous nps =      105597    01/21/25 21:46:53 
+ master set rendezvous nps =      105597    01/21/25 23:26:12 
 
   estimator     cycle    21   ave of    16 cycles      combination         simple average    combined average     corr
  k(collision)      1.035145       1.047264 0.0027     k(col/abs)          1.047264 0.0027     1.047264 0.0027   1.0000
@@ -276,7 +281,7 @@
  rem life(col)   3.7809E+01     4.5276E+01 0.0209     k(col/abs/tk ln)    1.046438 0.0026     1.045382 0.0027
  rem life(abs)   3.7795E+01     4.4975E+01 0.0210     life(col/abs/tl)  4.5187E+01 0.0209   4.4832E+01 0.0292
  source points generated   4925                source_entropy  5.8040E+00
- master set rendezvous nps =      110522    01/21/25 21:46:53 
+ master set rendezvous nps =      110522    01/21/25 23:26:12 
 
   estimator     cycle    22   ave of    17 cycles      combination         simple average    combined average     corr
  k(collision)      1.056688       1.047818 0.0026     k(col/abs)          1.047818 0.0026     1.047818 0.0026   1.0000
@@ -285,7 +290,7 @@
  rem life(col)   4.7708E+01     4.5419E+01 0.0199     k(col/abs/tk ln)    1.046829 0.0024     1.045467 0.0026
  rem life(abs)   4.7270E+01     4.5110E+01 0.0199     life(col/abs/tl)  4.5337E+01 0.0199   4.4842E+01 0.0284
  source points generated   5070                source_entropy  5.8235E+00
- master set rendezvous nps =      115592    01/21/25 21:46:53 
+ master set rendezvous nps =      115592    01/21/25 23:26:12 
 
   estimator     cycle    23   ave of    18 cycles      combination         simple average    combined average     corr
  k(collision)      1.045482       1.047688 0.0025     k(col/abs)          1.047688 0.0025     1.047688 0.0025   1.0000
@@ -294,7 +299,7 @@
  rem life(col)   4.8649E+01     4.5598E+01 0.0191     k(col/abs/tk ln)    1.046653 0.0023     1.045269 0.0025
  rem life(abs)   4.8271E+01     4.5286E+01 0.0190     life(col/abs/tl)  4.5493E+01 0.0190   4.5302E+01 0.0257
  source points generated   4940                source_entropy  5.7979E+00
- master set rendezvous nps =      120532    01/21/25 21:46:53 
+ master set rendezvous nps =      120532    01/21/25 23:26:12 
 
   estimator     cycle    24   ave of    19 cycles      combination         simple average    combined average     corr
  k(collision)      1.029856       1.046750 0.0025     k(col/abs)          1.046750 0.0025     1.046750 0.0025   1.0000
@@ -303,7 +308,7 @@
  rem life(col)   4.1280E+01     4.5371E+01 0.0188     k(col/abs/tk ln)    1.045905 0.0023     1.044494 0.0023
  rem life(abs)   4.1520E+01     4.5088E+01 0.0186     life(col/abs/tl)  4.5275E+01 0.0187   4.4918E+01 0.0240
  source points generated   4874                source_entropy  5.7786E+00
- master set rendezvous nps =      125406    01/21/25 21:46:53 
+ master set rendezvous nps =      125406    01/21/25 23:26:12 
 
   estimator     cycle    25   ave of    20 cycles      combination         simple average    combined average     corr
  k(collision)      1.052989       1.047062 0.0024     k(col/abs)          1.047062 0.0024     1.047062 0.0024   1.0000
@@ -312,7 +317,7 @@
  rem life(col)   4.9273E+01     4.5566E+01 0.0183     k(col/abs/tk ln)    1.046470 0.0022     1.045950 0.0023
  rem life(abs)   4.9868E+01     4.5327E+01 0.0183     life(col/abs/tl)  4.5497E+01 0.0183   4.5334E+01 0.0228
  source points generated   5095                source_entropy  5.7928E+00
- master set rendezvous nps =      130501    01/21/25 21:46:53 
+ master set rendezvous nps =      130501    01/21/25 23:26:12 
 
   estimator     cycle    26   ave of    21 cycles      combination         simple average    combined average     corr
  k(collision)      1.056423       1.047507 0.0023     k(col/abs)          1.047507 0.0023     1.047507 0.0023   1.0000
@@ -321,7 +326,7 @@
  rem life(col)   4.6698E+01     4.5620E+01 0.0174     k(col/abs/tk ln)    1.047005 0.0022     1.046655 0.0023
  rem life(abs)   4.7475E+01     4.5429E+01 0.0176     life(col/abs/tl)  4.5592E+01 0.0175   4.5404E+01 0.0217
  source points generated   4994                source_entropy  5.7885E+00
- master set rendezvous nps =      135495    01/21/25 21:46:53 
+ master set rendezvous nps =      135495    01/21/25 23:26:12 
 
   estimator     cycle    27   ave of    22 cycles      combination         simple average    combined average     corr
  k(collision)      1.053984       1.047802 0.0022     k(col/abs)          1.047802 0.0022     1.047802 0.0022   1.0000
@@ -330,7 +335,7 @@
  rem life(col)   4.1083E+01     4.5414E+01 0.0173     k(col/abs/tk ln)    1.047378 0.0021     1.047136 0.0022
  rem life(abs)   4.1564E+01     4.5253E+01 0.0172     life(col/abs/tl)  4.5411E+01 0.0172   4.5195E+01 0.0215
  source points generated   4997                source_entropy  5.7670E+00
- master set rendezvous nps =      140492    01/21/25 21:46:53 
+ master set rendezvous nps =      140492    01/21/25 23:26:12 
 
   estimator     cycle    28   ave of    23 cycles      combination         simple average    combined average     corr
  k(collision)      1.064289       1.048519 0.0022     k(col/abs)          1.048519 0.0022     1.048519 0.0022   1.0000
@@ -339,7 +344,7 @@
  rem life(col)   4.8816E+01     4.5562E+01 0.0168     k(col/abs/tk ln)    1.048158 0.0022     1.048024 0.0022
  rem life(abs)   4.9160E+01     4.5423E+01 0.0168     life(col/abs/tl)  4.5568E+01 0.0168   4.5452E+01 0.0205
  source points generated   5036                source_entropy  5.8102E+00
- master set rendezvous nps =      145528    01/21/25 21:46:53 
+ master set rendezvous nps =      145528    01/21/25 23:26:12 
 
   estimator     cycle    29   ave of    24 cycles      combination         simple average    combined average     corr
  k(collision)      1.041224       1.048215 0.0022     k(col/abs)          1.048215 0.0022     1.048215 0.0022   1.0000
@@ -348,8 +353,8 @@
  rem life(col)   4.0051E+01     4.5332E+01 0.0169     k(col/abs/tk ln)    1.047888 0.0021     1.047755 0.0021
  rem life(abs)   4.1680E+01     4.5267E+01 0.0165     life(col/abs/tl)  4.5402E+01 0.0165   4.5350E+01 0.0205
  source points generated   4834                source_entropy  5.8107E+00
- master set rendezvous nps =      150000    01/21/25 21:46:53 
- master set rendezvous nps =      150362    01/21/25 21:46:53 
+ master set rendezvous nps =      150000    01/21/25 23:26:12 
+ master set rendezvous nps =      150362    01/21/25 23:26:12 
 
   estimator     cycle    30   ave of    25 cycles      combination         simple average    combined average     corr
  k(collision)      1.053135       1.048411 0.0021     k(col/abs)          1.048411 0.0021     1.048411 0.0021   1.0000
@@ -358,7 +363,7 @@
  rem life(col)   4.4134E+01     4.5284E+01 0.0163     k(col/abs/tk ln)    1.048278 0.0020     1.048271 0.0021
  rem life(abs)   4.3201E+01     4.5185E+01 0.0160     life(col/abs/tl)  4.5333E+01 0.0159   4.5313E+01 0.0201
  source points generated   5000                source_entropy  5.8130E+00
- master set rendezvous nps =      155362    01/21/25 21:46:53 
+ master set rendezvous nps =      155362    01/21/25 23:26:12 
 
   estimator     cycle    31   ave of    26 cycles      combination         simple average    combined average     corr
  k(collision)      1.050330       1.048485 0.0020     k(col/abs)          1.048485 0.0020     1.048485 0.0020   1.0000
@@ -367,7 +372,7 @@
  rem life(col)   5.1563E+01     4.5526E+01 0.0164     k(col/abs/tk ln)    1.048428 0.0020     1.048428 0.0020
  rem life(abs)   5.0412E+01     4.5386E+01 0.0159     life(col/abs/tl)  4.5542E+01 0.0159   4.5508E+01 0.0200
  source points generated   5016                source_entropy  5.8097E+00
- master set rendezvous nps =      160378    01/21/25 21:46:53 
+ master set rendezvous nps =      160378    01/21/25 23:26:12 
 
   estimator     cycle    32   ave of    27 cycles      combination         simple average    combined average     corr
  k(collision)      1.027400       1.047704 0.0021     k(col/abs)          1.047704 0.0021     1.047704 0.0021   1.0000
@@ -376,7 +381,7 @@
  rem life(col)   4.4489E+01     4.5487E+01 0.0158     k(col/abs/tk ln)    1.047772 0.0020     1.047795 0.0020
  rem life(abs)   4.3977E+01     4.5334E+01 0.0154     life(col/abs/tl)  4.5490E+01 0.0154   4.5428E+01 0.0193
  source points generated   4830                source_entropy  5.8247E+00
- master set rendezvous nps =      165208    01/21/25 21:46:53 
+ master set rendezvous nps =      165208    01/21/25 23:26:12 
 
   estimator     cycle    33   ave of    28 cycles      combination         simple average    combined average     corr
  k(collision)      1.048947       1.047749 0.0020     k(col/abs)          1.047749 0.0020     1.047749 0.0020   1.0000
@@ -385,7 +390,7 @@
  rem life(col)   4.9160E+01     4.5618E+01 0.0155     k(col/abs/tk ln)    1.047698 0.0019     1.047683 0.0019
  rem life(abs)   5.0330E+01     4.5512E+01 0.0153     life(col/abs/tl)  4.5648E+01 0.0152   4.5770E+01 0.0184
  source points generated   5110                source_entropy  5.8389E+00
- master set rendezvous nps =      170318    01/21/25 21:46:53 
+ master set rendezvous nps =      170318    01/21/25 23:26:12 
 
   estimator     cycle    34   ave of    29 cycles      combination         simple average    combined average     corr
  k(collision)      1.031917       1.047203 0.0020     k(col/abs)          1.047203 0.0020     1.047203 0.0020   1.0000
@@ -394,7 +399,7 @@
  rem life(col)   4.1649E+01     4.5482E+01 0.0153     k(col/abs/tk ln)    1.047117 0.0019     1.047100 0.0020
  rem life(abs)   4.1703E+01     4.5381E+01 0.0151     life(col/abs/tl)  4.5509E+01 0.0150   4.5533E+01 0.0179
  source points generated   4921                source_entropy  5.8376E+00
- master set rendezvous nps =      175239    01/21/25 21:46:53 
+ master set rendezvous nps =      175239    01/21/25 23:26:12 
 
   estimator     cycle    35   ave of    30 cycles      combination         simple average    combined average     corr
  k(collision)      1.033080       1.046732 0.0020     k(col/abs)          1.046732 0.0020     1.046732 0.0020   1.0000
@@ -403,7 +408,7 @@
  rem life(col)   4.4305E+01     4.5442E+01 0.0148     k(col/abs/tk ln)    1.046791 0.0019     1.046814 0.0019
  rem life(abs)   4.4498E+01     4.5351E+01 0.0146     life(col/abs/tl)  4.5475E+01 0.0145   4.5493E+01 0.0173
  source points generated   4964                source_entropy  5.7789E+00
- master set rendezvous nps =      180203    01/21/25 21:46:53 
+ master set rendezvous nps =      180203    01/21/25 23:26:12 
 
   estimator     cycle    36   ave of    31 cycles      combination         simple average    combined average     corr
  k(collision)      1.047772       1.046766 0.0019     k(col/abs)          1.046766 0.0019     1.046766 0.0019   1.0000
@@ -412,7 +417,7 @@
  rem life(col)   4.9974E+01     4.5589E+01 0.0146     k(col/abs/tk ln)    1.046791 0.0018     1.046801 0.0018
  rem life(abs)   4.8497E+01     4.5453E+01 0.0142     life(col/abs/tl)  4.5596E+01 0.0143   4.5504E+01 0.0172
  source points generated   5036                source_entropy  5.8143E+00
- master set rendezvous nps =      185239    01/21/25 21:46:53 
+ master set rendezvous nps =      185239    01/21/25 23:26:12 
 
   estimator     cycle    37   ave of    32 cycles      combination         simple average    combined average     corr
  k(collision)      1.052159       1.046934 0.0019     k(col/abs)          1.046934 0.0019     1.046934 0.0019   1.0000
@@ -421,7 +426,7 @@
  rem life(col)   4.4029E+01     4.5540E+01 0.0142     k(col/abs/tk ln)    1.047013 0.0018     1.047039 0.0018
  rem life(abs)   4.4516E+01     4.5423E+01 0.0138     life(col/abs/tl)  4.5562E+01 0.0138   4.5480E+01 0.0167
  source points generated   5000                source_entropy  5.8136E+00
- master set rendezvous nps =      190239    01/21/25 21:46:53 
+ master set rendezvous nps =      190239    01/21/25 23:26:12 
 
   estimator     cycle    38   ave of    33 cycles      combination         simple average    combined average     corr
  k(collision)      1.064424       1.047464 0.0019     k(col/abs)          1.047464 0.0019     1.047464 0.0019   1.0000
@@ -430,7 +435,7 @@
  rem life(col)   4.1153E+01     4.5407E+01 0.0141     k(col/abs/tk ln)    1.047547 0.0018     1.047572 0.0018
  rem life(abs)   4.2313E+01     4.5329E+01 0.0136     life(col/abs/tl)  4.5454E+01 0.0137   4.5367E+01 0.0163
  source points generated   5075                source_entropy  5.8132E+00
- master set rendezvous nps =      195314    01/21/25 21:46:53 
+ master set rendezvous nps =      195314    01/21/25 23:26:12 
 
   estimator     cycle    39   ave of    34 cycles      combination         simple average    combined average     corr
  k(collision)      1.059885       1.047829 0.0019     k(col/abs)          1.047829 0.0019     1.047829 0.0019   1.0000
@@ -439,8 +444,8 @@
  rem life(col)   4.6685E+01     4.5444E+01 0.0137     k(col/abs/tk ln)    1.047848 0.0018     1.047856 0.0018
  rem life(abs)   4.5348E+01     4.5330E+01 0.0132     life(col/abs/tl)  4.5464E+01 0.0132   4.5350E+01 0.0158
  source points generated   5067                source_entropy  5.8006E+00
- master set rendezvous nps =      200000    01/21/25 21:46:53 
- master set rendezvous nps =      200381    01/21/25 21:46:53 
+ master set rendezvous nps =      200000    01/21/25 23:26:12 
+ master set rendezvous nps =      200381    01/21/25 23:26:12 
 
   estimator     cycle    40   ave of    35 cycles      combination         simple average    combined average     corr
  k(collision)      1.043721       1.047712 0.0018     k(col/abs)          1.047712 0.0018     1.047712 0.0018   1.0000
@@ -449,7 +454,7 @@
  rem life(col)   4.1397E+01     4.5329E+01 0.0136     k(col/abs/tk ln)    1.047581 0.0017     1.047560 0.0018
  rem life(abs)   4.1458E+01     4.5219E+01 0.0131     life(col/abs/tl)  4.5353E+01 0.0131   4.5261E+01 0.0158
  source points generated   5033                source_entropy  5.8057E+00
- master set rendezvous nps =      205414    01/21/25 21:46:53 
+ master set rendezvous nps =      205414    01/21/25 23:26:12 
 
   estimator     cycle    41   ave of    36 cycles      combination         simple average    combined average     corr
  k(collision)      1.039605       1.047487 0.0018     k(col/abs)          1.047487 0.0018     1.047487 0.0018   1.0000
@@ -458,7 +463,7 @@
  rem life(col)   5.2883E+01     4.5539E+01 0.0139     k(col/abs/tk ln)    1.047465 0.0017     1.047460 0.0017
  rem life(abs)   5.2329E+01     4.5417E+01 0.0134     life(col/abs/tl)  4.5547E+01 0.0134   4.5592E+01 0.0156
  source points generated   5002                source_entropy  5.8229E+00
- master set rendezvous nps =      210416    01/21/25 21:46:53 
+ master set rendezvous nps =      210416    01/21/25 23:26:12 
 
   estimator     cycle    42   ave of    37 cycles      combination         simple average    combined average     corr
  k(collision)      1.035084       1.047152 0.0017     k(col/abs)          1.047152 0.0017     1.047152 0.0017   1.0000
@@ -467,7 +472,7 @@
  rem life(col)   3.6981E+01     4.5307E+01 0.0146     k(col/abs/tk ln)    1.046914 0.0017     1.046996 0.0017
  rem life(abs)   3.8028E+01     4.5217E+01 0.0138     life(col/abs/tl)  4.5332E+01 0.0139   4.5252E+01 0.0157
  source points generated   5113                source_entropy  5.8026E+00
- master set rendezvous nps =      215529    01/21/25 21:46:53 
+ master set rendezvous nps =      215529    01/21/25 23:26:12 
 
   estimator     cycle    43   ave of    38 cycles      combination         simple average    combined average     corr
  k(collision)      1.031713       1.046745 0.0017     k(col/abs)          1.046745 0.0017     1.046745 0.0017   1.0000
@@ -476,7 +481,7 @@
  rem life(col)   4.5155E+01     4.5303E+01 0.0142     k(col/abs/tk ln)    1.046574 0.0017     1.046615 0.0017
  rem life(abs)   4.4961E+01     4.5210E+01 0.0134     life(col/abs/tl)  4.5329E+01 0.0135   4.5249E+01 0.0154
  source points generated   4980                source_entropy  5.8046E+00
- master set rendezvous nps =      220509    01/21/25 21:46:53 
+ master set rendezvous nps =      220509    01/21/25 23:26:12 
 
   estimator     cycle    44   ave of    39 cycles      combination         simple average    combined average     corr
  k(collision)      1.048651       1.046794 0.0017     k(col/abs)          1.046794 0.0017     1.046794 0.0017   1.0000
@@ -485,7 +490,7 @@
  rem life(col)   5.2131E+01     4.5478E+01 0.0143     k(col/abs/tk ln)    1.046707 0.0017     1.046731 0.0017
  rem life(abs)   5.0995E+01     4.5358E+01 0.0134     life(col/abs/tl)  4.5493E+01 0.0136   4.5248E+01 0.0155
  source points generated   5025                source_entropy  5.8267E+00
- master set rendezvous nps =      225534    01/21/25 21:46:53 
+ master set rendezvous nps =      225534    01/21/25 23:26:12 
 
   estimator     cycle    45   ave of    40 cycles      combination         simple average    combined average     corr
  k(collision)      1.030499       1.046387 0.0017     k(col/abs)          1.046387 0.0017     1.046387 0.0017   1.0000
@@ -494,7 +499,7 @@
  rem life(col)   5.3571E+01     4.5681E+01 0.0145     k(col/abs/tk ln)    1.046334 0.0017     1.046346 0.0017
  rem life(abs)   5.2356E+01     4.5533E+01 0.0136     life(col/abs/tl)  4.5669E+01 0.0138   4.5466E+01 0.0153
  source points generated   5038                source_entropy  5.8125E+00
- master set rendezvous nps =      230572    01/21/25 21:46:53 
+ master set rendezvous nps =      230572    01/21/25 23:26:12 
 
   estimator     cycle    46   ave of    41 cycles      combination         simple average    combined average     corr
  k(collision)      1.040896       1.046253 0.0017     k(col/abs)          1.046253 0.0017     1.046253 0.0017   1.0000
@@ -503,7 +508,7 @@
  rem life(col)   4.5718E+01     4.5682E+01 0.0142     k(col/abs/tk ln)    1.046364 0.0016     1.046340 0.0016
  rem life(abs)   4.4491E+01     4.5508E+01 0.0133     life(col/abs/tl)  4.5654E+01 0.0134   4.5439E+01 0.0151
  source points generated   5019                source_entropy  5.8271E+00
- master set rendezvous nps =      235591    01/21/25 21:46:53 
+ master set rendezvous nps =      235591    01/21/25 23:26:12 
 
   estimator     cycle    47   ave of    42 cycles      combination         simple average    combined average     corr
  k(collision)      1.044236       1.046205 0.0016     k(col/abs)          1.046205 0.0016     1.046205 0.0016   1.0000
@@ -512,7 +517,7 @@
  rem life(col)   4.6920E+01     4.5711E+01 0.0138     k(col/abs/tk ln)    1.046404 0.0016     1.046360 0.0016
  rem life(abs)   4.7119E+01     4.5546E+01 0.0130     life(col/abs/tl)  4.5683E+01 0.0131   4.5510E+01 0.0144
  source points generated   5038                source_entropy  5.8197E+00
- master set rendezvous nps =      240629    01/21/25 21:46:53 
+ master set rendezvous nps =      240629    01/21/25 23:26:12 
 
   estimator     cycle    48   ave of    43 cycles      combination         simple average    combined average     corr
  k(collision)      1.045811       1.046196 0.0016     k(col/abs)          1.046196 0.0016     1.046196 0.0016   1.0000
@@ -521,7 +526,7 @@
  rem life(col)   4.6672E+01     4.5733E+01 0.0135     k(col/abs/tk ln)    1.046311 0.0016     1.046282 0.0016
  rem life(abs)   4.6252E+01     4.5563E+01 0.0127     life(col/abs/tl)  4.5705E+01 0.0128   4.5518E+01 0.0142
  source points generated   4884                source_entropy  5.8126E+00
- master set rendezvous nps =      245513    01/21/25 21:46:53 
+ master set rendezvous nps =      245513    01/21/25 23:26:13 
 
   estimator     cycle    49   ave of    44 cycles      combination         simple average    combined average     corr
  k(collision)      1.039713       1.046048 0.0016     k(col/abs)          1.046048 0.0016     1.046048 0.0016   1.0000
@@ -530,8 +535,8 @@
  rem life(col)   5.1132E+01     4.5856E+01 0.0134     k(col/abs/tk ln)    1.046196 0.0015     1.046162 0.0015
  rem life(abs)   4.9879E+01     4.5661E+01 0.0125     life(col/abs/tl)  4.5810E+01 0.0127   4.5567E+01 0.0141
  source points generated   4966                source_entropy  5.8295E+00
- master set rendezvous nps =      250000    01/21/25 21:46:53 
- master set rendezvous nps =      250479    01/21/25 21:46:54 
+ master set rendezvous nps =      250000    01/21/25 23:26:13 
+ master set rendezvous nps =      250479    01/21/25 23:26:13 
 
   estimator     cycle    50   ave of    45 cycles      combination         simple average    combined average     corr
  k(collision)      1.048843       1.046110 0.0015     k(col/abs)          1.046110 0.0015     1.046110 0.0015   1.0000
@@ -540,7 +545,7 @@
  rem life(col)   4.2913E+01     4.5791E+01 0.0132     k(col/abs/tk ln)    1.046233 0.0015     1.046205 0.0015
  rem life(abs)   4.2027E+01     4.5580E+01 0.0124     life(col/abs/tl)  4.5738E+01 0.0125   4.5539E+01 0.0141
  source points generated   5161                source_entropy  5.8186E+00
- master set rendezvous nps =      255640    01/21/25 21:46:54 
+ master set rendezvous nps =      255640    01/21/25 23:26:13 
 
   estimator     cycle    51   ave of    46 cycles      combination         simple average    combined average     corr
  k(collision)      1.048124       1.046154 0.0015     k(col/abs)          1.046154 0.0015     1.046154 0.0015   1.0000
@@ -549,7 +554,7 @@
  rem life(col)   4.8203E+01     4.5843E+01 0.0130     k(col/abs/tk ln)    1.046214 0.0015     1.046200 0.0015
  rem life(abs)   4.8398E+01     4.5641E+01 0.0122     life(col/abs/tl)  4.5788E+01 0.0123   4.5645E+01 0.0134
  source points generated   5006                source_entropy  5.8157E+00
- master set rendezvous nps =      260646    01/21/25 21:46:54 
+ master set rendezvous nps =      260646    01/21/25 23:26:13 
 
   estimator     cycle    52   ave of    47 cycles      combination         simple average    combined average     corr
  k(collision)      1.030675       1.045825 0.0015     k(col/abs)          1.045825 0.0015     1.045825 0.0015   1.0000
@@ -558,7 +563,7 @@
  rem life(col)   4.5559E+01     4.5837E+01 0.0127     k(col/abs/tk ln)    1.045791 0.0015     1.045805 0.0015
  rem life(abs)   4.4320E+01     4.5613E+01 0.0119     life(col/abs/tl)  4.5762E+01 0.0121   4.5570E+01 0.0133
  source points generated   4822                source_entropy  5.8284E+00
- master set rendezvous nps =      265468    01/21/25 21:46:54 
+ master set rendezvous nps =      265468    01/21/25 23:26:13 
 
   estimator     cycle    53   ave of    48 cycles      combination         simple average    combined average     corr
  k(collision)      1.048415       1.045879 0.0015     k(col/abs)          1.045879 0.0015     1.045879 0.0015   1.0000
@@ -567,7 +572,7 @@
  rem life(col)   4.3893E+01     4.5797E+01 0.0125     k(col/abs/tk ln)    1.045810 0.0015     1.045838 0.0015
  rem life(abs)   4.5405E+01     4.5609E+01 0.0117     life(col/abs/tl)  4.5735E+01 0.0118   4.5582E+01 0.0124
  source points generated   5065                source_entropy  5.7843E+00
- master set rendezvous nps =      270533    01/21/25 21:46:54 
+ master set rendezvous nps =      270533    01/21/25 23:26:13 
 
   estimator     cycle    54   ave of    49 cycles      combination         simple average    combined average     corr
  k(collision)      1.048964       1.045942 0.0014     k(col/abs)          1.045942 0.0014     1.045942 0.0014   1.0000
@@ -576,7 +581,7 @@
  rem life(col)   4.8043E+01     4.5842E+01 0.0123     k(col/abs/tk ln)    1.045814 0.0014     1.045865 0.0014
  rem life(abs)   4.8544E+01     4.5669E+01 0.0115     life(col/abs/tl)  4.5787E+01 0.0116   4.5674E+01 0.0121
  source points generated   4972                source_entropy  5.7956E+00
- master set rendezvous nps =      275505    01/21/25 21:46:54 
+ master set rendezvous nps =      275505    01/21/25 23:26:13 
 
   estimator     cycle    55   ave of    50 cycles      combination         simple average    combined average     corr
  k(collision)      1.053267       1.046088 0.0014     k(col/abs)          1.046088 0.0014     1.046088 0.0014   1.0000
@@ -585,7 +590,7 @@
  rem life(col)   4.8139E+01     4.5888E+01 0.0120     k(col/abs/tk ln)    1.045960 0.0014     1.046012 0.0014
  rem life(abs)   4.7551E+01     4.5706E+01 0.0113     life(col/abs/tl)  4.5818E+01 0.0114   4.5680E+01 0.0117
  source points generated   4990                source_entropy  5.7685E+00
- master set rendezvous nps =      280495    01/21/25 21:46:54 
+ master set rendezvous nps =      280495    01/21/25 23:26:13 
 
   estimator     cycle    56   ave of    51 cycles      combination         simple average    combined average     corr
  k(collision)      1.048984       1.046145 0.0014     k(col/abs)          1.046145 0.0014     1.046145 0.0014   1.0000
@@ -594,7 +599,7 @@
  rem life(col)   4.9371E+01     4.5957E+01 0.0119     k(col/abs/tk ln)    1.045989 0.0014     1.046051 0.0014
  rem life(abs)   4.8530E+01     4.5762E+01 0.0111     life(col/abs/tl)  4.5879E+01 0.0112   4.5714E+01 0.0116
  source points generated   4900                source_entropy  5.7867E+00
- master set rendezvous nps =      285395    01/21/25 21:46:54 
+ master set rendezvous nps =      285395    01/21/25 23:26:13 
 
   estimator     cycle    57   ave of    52 cycles      combination         simple average    combined average     corr
  k(collision)      1.044890       1.046121 0.0014     k(col/abs)          1.046121 0.0014     1.046121 0.0014   1.0000
@@ -603,7 +608,7 @@
  rem life(col)   4.6815E+01     4.5973E+01 0.0116     k(col/abs/tk ln)    1.046067 0.0013     1.046089 0.0013
  rem life(abs)   4.7652E+01     4.5798E+01 0.0109     life(col/abs/tl)  4.5911E+01 0.0110   4.5784E+01 0.0114
  source points generated   4990                source_entropy  5.8106E+00
- master set rendezvous nps =      290385    01/21/25 21:46:54 
+ master set rendezvous nps =      290385    01/21/25 23:26:13 
 
   estimator     cycle    58   ave of    53 cycles      combination         simple average    combined average     corr
  k(collision)      1.041748       1.046038 0.0013     k(col/abs)          1.046038 0.0013     1.046038 0.0013   1.0000
@@ -612,7 +617,7 @@
  rem life(col)   4.1911E+01     4.5897E+01 0.0116     k(col/abs/tk ln)    1.046023 0.0013     1.046029 0.0013
  rem life(abs)   4.2357E+01     4.5733E+01 0.0108     life(col/abs/tl)  4.5839E+01 0.0110   4.5699E+01 0.0112
  source points generated   4977                source_entropy  5.7939E+00
- master set rendezvous nps =      295362    01/21/25 21:46:54 
+ master set rendezvous nps =      295362    01/21/25 23:26:13 
 
   estimator     cycle    59   ave of    54 cycles      combination         simple average    combined average     corr
  k(collision)      1.053820       1.046183 0.0013     k(col/abs)          1.046183 0.0013     1.046183 0.0013   1.0000
@@ -621,8 +626,8 @@
  rem life(col)   4.5614E+01     4.5891E+01 0.0114     k(col/abs/tk ln)    1.046136 0.0013     1.046153 0.0013
  rem life(abs)   4.5990E+01     4.5738E+01 0.0106     life(col/abs/tl)  4.5838E+01 0.0108   4.5710E+01 0.0110
  source points generated   5101                source_entropy  5.8087E+00
- master set rendezvous nps =      300000    01/21/25 21:46:54 
- master set rendezvous nps =      300463    01/21/25 21:46:54 
+ master set rendezvous nps =      300000    01/21/25 23:26:13 
+ master set rendezvous nps =      300463    01/21/25 23:26:13 
 
   estimator     cycle    60   ave of    55 cycles      combination         simple average    combined average     corr
  k(collision)      1.071196       1.046637 0.0014     k(col/abs)          1.046637 0.0014     1.046637 0.0014   1.0000
@@ -631,7 +636,7 @@
  rem life(col)   3.8176E+01     4.5751E+01 0.0116     k(col/abs/tk ln)    1.046471 0.0013     1.046490 0.0013
  rem life(abs)   3.8430E+01     4.5605E+01 0.0109     life(col/abs/tl)  4.5701E+01 0.0110   4.5554E+01 0.0112
  source points generated   5126                source_entropy  5.7835E+00
- master set rendezvous nps =      305589    01/21/25 21:46:54 
+ master set rendezvous nps =      305589    01/21/25 23:26:13 
 
   estimator     cycle    61   ave of    56 cycles      combination         simple average    combined average     corr
  k(collision)      1.057381       1.046829 0.0013     k(col/abs)          1.046829 0.0013     1.046829 0.0013   1.0000
@@ -640,7 +645,7 @@
  rem life(col)   4.5673E+01     4.5750E+01 0.0114     k(col/abs/tk ln)    1.046669 0.0013     1.046689 0.0013
  rem life(abs)   4.4356E+01     4.5583E+01 0.0107     life(col/abs/tl)  4.5687E+01 0.0108   4.5529E+01 0.0111
  source points generated   4893                source_entropy  5.8099E+00
- master set rendezvous nps =      310482    01/21/25 21:46:54 
+ master set rendezvous nps =      310482    01/21/25 23:26:13 
 
   estimator     cycle    62   ave of    57 cycles      combination         simple average    combined average     corr
  k(collision)      1.057238       1.047012 0.0013     k(col/abs)          1.047012 0.0013     1.047012 0.0013   1.0000
@@ -649,7 +654,7 @@
  rem life(col)   4.9026E+01     4.5807E+01 0.0112     k(col/abs/tk ln)    1.046841 0.0013     1.046861 0.0013
  rem life(abs)   4.8077E+01     4.5627E+01 0.0105     life(col/abs/tl)  4.5738E+01 0.0107   4.5551E+01 0.0110
  source points generated   5043                source_entropy  5.8235E+00
- master set rendezvous nps =      315525    01/21/25 21:46:54 
+ master set rendezvous nps =      315525    01/21/25 23:26:13 
 
   estimator     cycle    63   ave of    58 cycles      combination         simple average    combined average     corr
  k(collision)      1.034936       1.046804 0.0013     k(col/abs)          1.046804 0.0013     1.046804 0.0013   1.0000
@@ -658,7 +663,7 @@
  rem life(col)   4.4195E+01     4.5779E+01 0.0111     k(col/abs/tk ln)    1.046606 0.0013     1.046636 0.0013
  rem life(abs)   4.4124E+01     4.5601E+01 0.0104     life(col/abs/tl)  4.5714E+01 0.0105   4.5536E+01 0.0108
  source points generated   4950                source_entropy  5.8153E+00
- master set rendezvous nps =      320475    01/21/25 21:46:54 
+ master set rendezvous nps =      320475    01/21/25 23:26:13 
 
   estimator     cycle    64   ave of    59 cycles      combination         simple average    combined average     corr
  k(collision)      1.046934       1.046806 0.0013     k(col/abs)          1.046806 0.0013     1.046806 0.0013   1.0000
@@ -667,7 +672,7 @@
  rem life(col)   4.6884E+01     4.5798E+01 0.0109     k(col/abs/tk ln)    1.046569 0.0013     1.046607 0.0013
  rem life(abs)   4.5660E+01     4.5602E+01 0.0102     life(col/abs/tl)  4.5725E+01 0.0103   4.5533E+01 0.0107
  source points generated   4997                source_entropy  5.8256E+00
- master set rendezvous nps =      325472    01/21/25 21:46:54 
+ master set rendezvous nps =      325472    01/21/25 23:26:13 
 
   estimator     cycle    65   ave of    60 cycles      combination         simple average    combined average     corr
  k(collision)      1.046418       1.046799 0.0013     k(col/abs)          1.046799 0.0013     1.046799 0.0013   1.0000
@@ -676,7 +681,7 @@
  rem life(col)   4.8443E+01     4.5842E+01 0.0107     k(col/abs/tk ln)    1.046565 0.0012     1.046602 0.0013
  rem life(abs)   4.7164E+01     4.5628E+01 0.0100     life(col/abs/tl)  4.5757E+01 0.0102   4.5538E+01 0.0106
  source points generated   5108                source_entropy  5.8458E+00
- master set rendezvous nps =      330580    01/21/25 21:46:54 
+ master set rendezvous nps =      330580    01/21/25 23:26:13 
 
   estimator     cycle    66   ave of    61 cycles      combination         simple average    combined average     corr
  k(collision)      1.050768       1.046864 0.0013     k(col/abs)          1.046864 0.0013     1.046864 0.0013   1.0000
@@ -685,7 +690,7 @@
  rem life(col)   5.1463E+01     4.5934E+01 0.0107     k(col/abs/tk ln)    1.046536 0.0012     1.046592 0.0012
  rem life(abs)   5.1270E+01     4.5720E+01 0.0101     life(col/abs/tl)  4.5844E+01 0.0102   4.5653E+01 0.0105
  source points generated   4937                source_entropy  5.8123E+00
- master set rendezvous nps =      335517    01/21/25 21:46:54 
+ master set rendezvous nps =      335517    01/21/25 23:26:13 
 
   estimator     cycle    67   ave of    62 cycles      combination         simple average    combined average     corr
  k(collision)      1.029002       1.046576 0.0013     k(col/abs)          1.046576 0.0013     1.046576 0.0013   1.0000
@@ -694,7 +699,7 @@
  rem life(col)   4.0423E+01     4.5845E+01 0.0107     k(col/abs/tk ln)    1.046245 0.0012     1.046303 0.0013
  rem life(abs)   3.9568E+01     4.5621E+01 0.0101     life(col/abs/tl)  4.5749E+01 0.0102   4.5576E+01 0.0107
  source points generated   4856                source_entropy  5.8152E+00
- master set rendezvous nps =      340373    01/21/25 21:46:54 
+ master set rendezvous nps =      340373    01/21/25 23:26:13 
 
   estimator     cycle    68   ave of    63 cycles      combination         simple average    combined average     corr
  k(collision)      1.034979       1.046392 0.0013     k(col/abs)          1.046392 0.0013     1.046392 0.0013   1.0000
@@ -703,7 +708,7 @@
  rem life(col)   4.5297E+01     4.5837E+01 0.0106     k(col/abs/tk ln)    1.046038 0.0012     1.046111 0.0013
  rem life(abs)   4.3779E+01     4.5592E+01 0.0100     life(col/abs/tl)  4.5726E+01 0.0101   4.5547E+01 0.0106
  source points generated   4978                source_entropy  5.8313E+00
- master set rendezvous nps =      345351    01/21/25 21:46:54 
+ master set rendezvous nps =      345351    01/21/25 23:26:13 
 
   estimator     cycle    69   ave of    64 cycles      combination         simple average    combined average     corr
  k(collision)      1.036457       1.046237 0.0013     k(col/abs)          1.046237 0.0013     1.046237 0.0013   1.0000
@@ -712,8 +717,8 @@
  rem life(col)   4.7114E+01     4.5857E+01 0.0104     k(col/abs/tk ln)    1.045851 0.0012     1.045947 0.0012
  rem life(abs)   4.7800E+01     4.5626E+01 0.0099     life(col/abs/tl)  4.5760E+01 0.0099   4.5604E+01 0.0105
  source points generated   5094                source_entropy  5.8145E+00
- master set rendezvous nps =      350000    01/21/25 21:46:54 
- master set rendezvous nps =      350445    01/21/25 21:46:54 
+ master set rendezvous nps =      350000    01/21/25 23:26:13 
+ master set rendezvous nps =      350445    01/21/25 23:26:13 
 
   estimator     cycle    70   ave of    65 cycles      combination         simple average    combined average     corr
  k(collision)      1.037857       1.046108 0.0012     k(col/abs)          1.046108 0.0012     1.046108 0.0012   1.0000
@@ -722,7 +727,7 @@
  rem life(col)   4.8298E+01     4.5894E+01 0.0103     k(col/abs/tk ln)    1.045737 0.0012     1.045824 0.0012
  rem life(abs)   4.8568E+01     4.5672E+01 0.0098     life(col/abs/tl)  4.5803E+01 0.0098   4.5662E+01 0.0104
  source points generated   5036                source_entropy  5.8436E+00
- master set rendezvous nps =      355481    01/21/25 21:46:54 
+ master set rendezvous nps =      355481    01/21/25 23:26:13 
 
   estimator     cycle    71   ave of    66 cycles      combination         simple average    combined average     corr
  k(collision)      1.039093       1.046002 0.0012     k(col/abs)          1.046002 0.0012     1.046002 0.0012   1.0000
@@ -731,7 +736,7 @@
  rem life(col)   4.4234E+01     4.5869E+01 0.0101     k(col/abs/tk ln)    1.045655 0.0012     1.045731 0.0012
  rem life(abs)   4.5080E+01     4.5663E+01 0.0096     life(col/abs/tl)  4.5784E+01 0.0097   4.5647E+01 0.0101
  source points generated   4971                source_entropy  5.8119E+00
- master set rendezvous nps =      360452    01/21/25 21:46:54 
+ master set rendezvous nps =      360452    01/21/25 23:26:13 
 
   estimator     cycle    72   ave of    67 cycles      combination         simple average    combined average     corr
  k(collision)      1.049863       1.046059 0.0012     k(col/abs)          1.046059 0.0012     1.046059 0.0012   1.0000
@@ -740,7 +745,7 @@
  rem life(col)   5.0196E+01     4.5934E+01 0.0101     k(col/abs/tk ln)    1.045657 0.0012     1.045743 0.0012
  rem life(abs)   4.9849E+01     4.5725E+01 0.0096     life(col/abs/tl)  4.5847E+01 0.0096   4.5707E+01 0.0101
  source points generated   5015                source_entropy  5.8164E+00
- master set rendezvous nps =      365467    01/21/25 21:46:54 
+ master set rendezvous nps =      365467    01/21/25 23:26:13 
 
   estimator     cycle    73   ave of    68 cycles      combination         simple average    combined average     corr
  k(collision)      1.042340       1.046005 0.0012     k(col/abs)          1.046005 0.0012     1.046005 0.0012   1.0000
@@ -749,7 +754,7 @@
  rem life(col)   4.0909E+01     4.5860E+01 0.0101     k(col/abs/tk ln)    1.045612 0.0012     1.045694 0.0012
  rem life(abs)   4.0243E+01     4.5644E+01 0.0096     life(col/abs/tl)  4.5770E+01 0.0096   4.5651E+01 0.0102
  source points generated   4909                source_entropy  5.8168E+00
- master set rendezvous nps =      370376    01/21/25 21:46:54 
+ master set rendezvous nps =      370376    01/21/25 23:26:13 
 
   estimator     cycle    74   ave of    69 cycles      combination         simple average    combined average     corr
  k(collision)      1.059916       1.046206 0.0012     k(col/abs)          1.046206 0.0012     1.046206 0.0012   1.0000
@@ -758,7 +763,7 @@
  rem life(col)   4.6221E+01     4.5865E+01 0.0099     k(col/abs/tk ln)    1.045809 0.0012     1.045890 0.0012
  rem life(abs)   4.7902E+01     4.5677E+01 0.0095     life(col/abs/tl)  4.5794E+01 0.0095   4.5727E+01 0.0100
  source points generated   5150                source_entropy  5.8097E+00
- master set rendezvous nps =      375526    01/21/25 21:46:54 
+ master set rendezvous nps =      375526    01/21/25 23:26:13 
 
   estimator     cycle    75   ave of    70 cycles      combination         simple average    combined average     corr
  k(collision)      1.040158       1.046120 0.0012     k(col/abs)          1.046120 0.0012     1.046120 0.0012   1.0000
@@ -767,7 +772,7 @@
  rem life(col)   4.5465E+01     4.5859E+01 0.0098     k(col/abs/tk ln)    1.045815 0.0011     1.045874 0.0012
  rem life(abs)   4.5176E+01     4.5670E+01 0.0093     life(col/abs/tl)  4.5786E+01 0.0094   4.5711E+01 0.0098
  source points generated   4892                source_entropy  5.8197E+00
- master set rendezvous nps =      380418    01/21/25 21:46:54 
+ master set rendezvous nps =      380418    01/21/25 23:26:13 
 
   estimator     cycle    76   ave of    71 cycles      combination         simple average    combined average     corr
  k(collision)      1.054836       1.046243 0.0012     k(col/abs)          1.046243 0.0012     1.046243 0.0012   1.0000
@@ -776,7 +781,7 @@
  rem life(col)   4.3263E+01     4.5823E+01 0.0097     k(col/abs/tk ln)    1.045921 0.0011     1.045978 0.0011
  rem life(abs)   4.2619E+01     4.5627E+01 0.0093     life(col/abs/tl)  4.5747E+01 0.0093   4.5682E+01 0.0098
  source points generated   5067                source_entropy  5.8125E+00
- master set rendezvous nps =      385485    01/21/25 21:46:54 
+ master set rendezvous nps =      385485    01/21/25 23:26:13 
 
   estimator     cycle    77   ave of    72 cycles      combination         simple average    combined average     corr
  k(collision)      1.035492       1.046093 0.0012     k(col/abs)          1.046093 0.0012     1.046093 0.0012   1.0000
@@ -785,7 +790,7 @@
  rem life(col)   4.6259E+01     4.5829E+01 0.0095     k(col/abs/tk ln)    1.045835 0.0011     1.045868 0.0011
  rem life(abs)   4.5808E+01     4.5630E+01 0.0091     life(col/abs/tl)  4.5752E+01 0.0092   4.5686E+01 0.0097
  source points generated   4929                source_entropy  5.7821E+00
- master set rendezvous nps =      390414    01/21/25 21:46:54 
+ master set rendezvous nps =      390414    01/21/25 23:26:14 
 
   estimator     cycle    78   ave of    73 cycles      combination         simple average    combined average     corr
  k(collision)      1.037559       1.045976 0.0011     k(col/abs)          1.045976 0.0011     1.045976 0.0011   1.0000
@@ -794,7 +799,7 @@
  rem life(col)   4.7008E+01     4.5845E+01 0.0094     k(col/abs/tk ln)    1.045768 0.0011     1.045789 0.0011
  rem life(abs)   4.6098E+01     4.5636E+01 0.0090     life(col/abs/tl)  4.5762E+01 0.0090   4.5688E+01 0.0096
  source points generated   5036                source_entropy  5.8249E+00
- master set rendezvous nps =      395450    01/21/25 21:46:54 
+ master set rendezvous nps =      395450    01/21/25 23:26:14 
 
   estimator     cycle    79   ave of    74 cycles      combination         simple average    combined average     corr
  k(collision)      1.038417       1.045874 0.0011     k(col/abs)          1.045874 0.0011     1.045874 0.0011   1.0000
@@ -803,8 +808,8 @@
  rem life(col)   4.5002E+01     4.5834E+01 0.0093     k(col/abs/tk ln)    1.045684 0.0011     1.045701 0.0011
  rem life(abs)   4.5373E+01     4.5632E+01 0.0089     life(col/abs/tl)  4.5754E+01 0.0089   4.5681E+01 0.0094
  source points generated   5010                source_entropy  5.8446E+00
- master set rendezvous nps =      400000    01/21/25 21:46:54 
- master set rendezvous nps =      400460    01/21/25 21:46:55 
+ master set rendezvous nps =      400000    01/21/25 23:26:14 
+ master set rendezvous nps =      400460    01/21/25 23:26:14 
 
   estimator     cycle    80   ave of    75 cycles      combination         simple average    combined average     corr
  k(collision)      1.033099       1.045704 0.0011     k(col/abs)          1.045704 0.0011     1.045704 0.0011   1.0000
@@ -813,7 +818,7 @@
  rem life(col)   4.2716E+01     4.5792E+01 0.0092     k(col/abs/tk ln)    1.045532 0.0011     1.045543 0.0011
  rem life(abs)   4.4940E+01     4.5623E+01 0.0088     life(col/abs/tl)  4.5735E+01 0.0088   4.5697E+01 0.0092
  source points generated   4981                source_entropy  5.8344E+00
- master set rendezvous nps =      405441    01/21/25 21:46:55 
+ master set rendezvous nps =      405441    01/21/25 23:26:14 
 
   estimator     cycle    81   ave of    76 cycles      combination         simple average    combined average     corr
  k(collision)      1.037478       1.045596 0.0011     k(col/abs)          1.045596 0.0011     1.045596 0.0011   1.0000
@@ -822,7 +827,7 @@
  rem life(col)   3.4558E+01     4.5644E+01 0.0097     k(col/abs/tk ln)    1.045429 0.0011     1.045439 0.0011
  rem life(abs)   3.4785E+01     4.5481E+01 0.0092     life(col/abs/tl)  4.5591E+01 0.0093   4.5546E+01 0.0097
  source points generated   5063                source_entropy  5.7811E+00
- master set rendezvous nps =      410504    01/21/25 21:46:55 
+ master set rendezvous nps =      410504    01/21/25 23:26:14 
 
   estimator     cycle    82   ave of    77 cycles      combination         simple average    combined average     corr
  k(collision)      1.054664       1.045714 0.0011     k(col/abs)          1.045714 0.0011     1.045714 0.0011   1.0000
@@ -831,7 +836,7 @@
  rem life(col)   4.6107E+01     4.5650E+01 0.0096     k(col/abs/tk ln)    1.045556 0.0011     1.045568 0.0011
  rem life(abs)   4.5104E+01     4.5476E+01 0.0091     life(col/abs/tl)  4.5589E+01 0.0092   4.5535E+01 0.0096
  source points generated   5078                source_entropy  5.8126E+00
- master set rendezvous nps =      415582    01/21/25 21:46:55 
+ master set rendezvous nps =      415582    01/21/25 23:26:14 
 
   estimator     cycle    83   ave of    78 cycles      combination         simple average    combined average     corr
  k(collision)      1.055879       1.045844 0.0011     k(col/abs)          1.045844 0.0011     1.045844 0.0011   1.0000
@@ -840,7 +845,7 @@
  rem life(col)   4.6858E+01     4.5666E+01 0.0094     k(col/abs/tk ln)    1.045676 0.0011     1.045686 0.0011
  rem life(abs)   4.6950E+01     4.5495E+01 0.0090     life(col/abs/tl)  4.5602E+01 0.0090   4.5543E+01 0.0094
  source points generated   5034                source_entropy  5.7907E+00
- master set rendezvous nps =      420616    01/21/25 21:46:55 
+ master set rendezvous nps =      420616    01/21/25 23:26:14 
 
   estimator     cycle    84   ave of    79 cycles      combination         simple average    combined average     corr
  k(collision)      1.020420       1.045522 0.0011     k(col/abs)          1.045522 0.0011     1.045522 0.0011   1.0000
@@ -849,7 +854,7 @@
  rem life(col)   4.2459E+01     4.5625E+01 0.0094     k(col/abs/tk ln)    1.045400 0.0011     1.045392 0.0011
  rem life(abs)   4.2618E+01     4.5458E+01 0.0089     life(col/abs/tl)  4.5566E+01 0.0090   4.5518E+01 0.0093
  source points generated   4874                source_entropy  5.8284E+00
- master set rendezvous nps =      425490    01/21/25 21:46:55 
+ master set rendezvous nps =      425490    01/21/25 23:26:14 
 
   estimator     cycle    85   ave of    80 cycles      combination         simple average    combined average     corr
  k(collision)      1.046400       1.045533 0.0011     k(col/abs)          1.045533 0.0011     1.045533 0.0011   1.0000
@@ -858,7 +863,7 @@
  rem life(col)   4.4633E+01     4.5613E+01 0.0093     k(col/abs/tk ln)    1.045429 0.0011     1.045424 0.0011
  rem life(abs)   4.4144E+01     4.5442E+01 0.0088     life(col/abs/tl)  4.5550E+01 0.0089   4.5500E+01 0.0092
  source points generated   5078                source_entropy  5.8258E+00
- master set rendezvous nps =      430568    01/21/25 21:46:55 
+ master set rendezvous nps =      430568    01/21/25 23:26:14 
 
   estimator     cycle    86   ave of    81 cycles      combination         simple average    combined average     corr
  k(collision)      1.035871       1.045414 0.0011     k(col/abs)          1.045414 0.0011     1.045414 0.0011   1.0000
@@ -867,7 +872,7 @@
  rem life(col)   4.7715E+01     4.5639E+01 0.0092     k(col/abs/tk ln)    1.045338 0.0011     1.045332 0.0011
  rem life(abs)   4.7285E+01     4.5464E+01 0.0087     life(col/abs/tl)  4.5571E+01 0.0088   4.5515E+01 0.0091
  source points generated   4950                source_entropy  5.8002E+00
- master set rendezvous nps =      435518    01/21/25 21:46:55 
+ master set rendezvous nps =      435518    01/21/25 23:26:14 
 
   estimator     cycle    87   ave of    82 cycles      combination         simple average    combined average     corr
  k(collision)      1.048002       1.045445 0.0011     k(col/abs)          1.045445 0.0011     1.045445 0.0011   1.0000
@@ -876,7 +881,7 @@
  rem life(col)   4.4071E+01     4.5620E+01 0.0091     k(col/abs/tk ln)    1.045365 0.0011     1.045359 0.0011
  rem life(abs)   4.3886E+01     4.5445E+01 0.0086     life(col/abs/tl)  4.5552E+01 0.0087   4.5495E+01 0.0090
  source points generated   4973                source_entropy  5.8049E+00
- master set rendezvous nps =      440491    01/21/25 21:46:55 
+ master set rendezvous nps =      440491    01/21/25 23:26:14 
 
   estimator     cycle    88   ave of    83 cycles      combination         simple average    combined average     corr
  k(collision)      1.035342       1.045324 0.0011     k(col/abs)          1.045324 0.0011     1.045324 0.0011   1.0000
@@ -885,7 +890,7 @@
  rem life(col)   4.1861E+01     4.5574E+01 0.0090     k(col/abs/tk ln)    1.045225 0.0010     1.045220 0.0011
  rem life(abs)   4.1209E+01     4.5394E+01 0.0086     life(col/abs/tl)  4.5504E+01 0.0086   4.5460E+01 0.0090
  source points generated   5050                source_entropy  5.7746E+00
- master set rendezvous nps =      445541    01/21/25 21:46:55 
+ master set rendezvous nps =      445541    01/21/25 23:26:14 
 
   estimator     cycle    89   ave of    84 cycles      combination         simple average    combined average     corr
  k(collision)      1.052618       1.045410 0.0011     k(col/abs)          1.045410 0.0011     1.045410 0.0011   1.0000
@@ -894,8 +899,8 @@
  rem life(col)   4.8425E+01     4.5608E+01 0.0089     k(col/abs/tk ln)    1.045298 0.0010     1.045291 0.0010
  rem life(abs)   4.7886E+01     4.5424E+01 0.0085     life(col/abs/tl)  4.5539E+01 0.0086   4.5478E+01 0.0090
  source points generated   5211                source_entropy  5.8131E+00
- master set rendezvous nps =      450000    01/21/25 21:46:55 
- master set rendezvous nps =      450752    01/21/25 21:46:55 
+ master set rendezvous nps =      450000    01/21/25 23:26:14 
+ master set rendezvous nps =      450752    01/21/25 23:26:14 
 
   estimator     cycle    90   ave of    85 cycles      combination         simple average    combined average     corr
  k(collision)      1.058441       1.045564 0.0011     k(col/abs)          1.045564 0.0011     1.045564 0.0011   1.0000
@@ -904,7 +909,7 @@
  rem life(col)   4.9011E+01     4.5648E+01 0.0089     k(col/abs/tk ln)    1.045443 0.0010     1.045434 0.0010
  rem life(abs)   4.8273E+01     4.5457E+01 0.0085     life(col/abs/tl)  4.5570E+01 0.0085   4.5500E+01 0.0088
  source points generated   5090                source_entropy  5.8078E+00
- master set rendezvous nps =      455842    01/21/25 21:46:55 
+ master set rendezvous nps =      455842    01/21/25 23:26:14 
 
   estimator     cycle    91   ave of    86 cycles      combination         simple average    combined average     corr
  k(collision)      1.037447       1.045469 0.0011     k(col/abs)          1.045469 0.0011     1.045469 0.0011   1.0000
@@ -913,7 +918,7 @@
  rem life(col)   3.8449E+01     4.5564E+01 0.0090     k(col/abs/tk ln)    1.045436 0.0010     1.045434 0.0010
  rem life(abs)   3.8616E+01     4.5378E+01 0.0086     life(col/abs/tl)  4.5489E+01 0.0086   4.5412E+01 0.0089
  source points generated   4835                source_entropy  5.8242E+00
- master set rendezvous nps =      460677    01/21/25 21:46:55 
+ master set rendezvous nps =      460677    01/21/25 23:26:14 
 
   estimator     cycle    92   ave of    87 cycles      combination         simple average    combined average     corr
  k(collision)      1.037181       1.045374 0.0011     k(col/abs)          1.045374 0.0011     1.045374 0.0011   1.0000
@@ -922,7 +927,7 @@
  rem life(col)   4.5462E+01     4.5563E+01 0.0089     k(col/abs/tk ln)    1.045370 0.0010     1.045369 0.0010
  rem life(abs)   4.5323E+01     4.5377E+01 0.0085     life(col/abs/tl)  4.5486E+01 0.0085   4.5403E+01 0.0088
  source points generated   4963                source_entropy  5.8285E+00
- master set rendezvous nps =      465640    01/21/25 21:46:55 
+ master set rendezvous nps =      465640    01/21/25 23:26:14 
 
   estimator     cycle    93   ave of    88 cycles      combination         simple average    combined average     corr
  k(collision)      1.042748       1.045344 0.0011     k(col/abs)          1.045344 0.0011     1.045344 0.0011   1.0000
@@ -931,7 +936,7 @@
  rem life(col)   5.0417E+01     4.5618E+01 0.0088     k(col/abs/tk ln)    1.045372 0.0010     1.045374 0.0010
  rem life(abs)   5.1154E+01     4.5443E+01 0.0085     life(col/abs/tl)  4.5547E+01 0.0085   4.5495E+01 0.0088
  source points generated   5082                source_entropy  5.7960E+00
- master set rendezvous nps =      470722    01/21/25 21:46:55 
+ master set rendezvous nps =      470722    01/21/25 23:26:14 
 
   estimator     cycle    94   ave of    89 cycles      combination         simple average    combined average     corr
  k(collision)      1.052198       1.045421 0.0010     k(col/abs)          1.045421 0.0010     1.045421 0.0010   1.0000
@@ -940,7 +945,7 @@
  rem life(col)   4.3240E+01     4.5592E+01 0.0088     k(col/abs/tk ln)    1.045442 0.0010     1.045444 0.0010
  rem life(abs)   4.3418E+01     4.5420E+01 0.0084     life(col/abs/tl)  4.5527E+01 0.0084   4.5491E+01 0.0087
  source points generated   4973                source_entropy  5.8427E+00
- master set rendezvous nps =      475695    01/21/25 21:46:55 
+ master set rendezvous nps =      475695    01/21/25 23:26:14 
 
   estimator     cycle    95   ave of    90 cycles      combination         simple average    combined average     corr
  k(collision)      1.050499       1.045478 0.0010     k(col/abs)          1.045478 0.0010     1.045478 0.0010   1.0000
@@ -949,7 +954,7 @@
  rem life(col)   5.1352E+01     4.5656E+01 0.0088     k(col/abs/tk ln)    1.045494 0.0010     1.045495 0.0010
  rem life(abs)   4.9811E+01     4.5469E+01 0.0084     life(col/abs/tl)  4.5581E+01 0.0084   4.5518E+01 0.0087
  source points generated   5019                source_entropy  5.8039E+00
- master set rendezvous nps =      480714    01/21/25 21:46:55 
+ master set rendezvous nps =      480714    01/21/25 23:26:14 
 
   estimator     cycle    96   ave of    91 cycles      combination         simple average    combined average     corr
  k(collision)      1.055620       1.045589 0.0010     k(col/abs)          1.045589 0.0010     1.045589 0.0010   1.0000
@@ -958,7 +963,7 @@
  rem life(col)   4.1795E+01     4.5613E+01 0.0087     k(col/abs/tk ln)    1.045602 0.0010     1.045603 0.0010
  rem life(abs)   4.3051E+01     4.5442E+01 0.0083     life(col/abs/tl)  4.5547E+01 0.0083   4.5481E+01 0.0086
  source points generated   4969                source_entropy  5.8129E+00
- master set rendezvous nps =      485683    01/21/25 21:46:55 
+ master set rendezvous nps =      485683    01/21/25 23:26:14 
 
   estimator     cycle    97   ave of    92 cycles      combination         simple average    combined average     corr
  k(collision)      1.026760       1.045384 0.0010     k(col/abs)          1.045384 0.0010     1.045384 0.0010   1.0000
@@ -967,7 +972,7 @@
  rem life(col)   5.2602E+01     4.5689E+01 0.0088     k(col/abs/tk ln)    1.045471 0.0010     1.045488 0.0010
  rem life(abs)   5.1119E+01     4.5504E+01 0.0083     life(col/abs/tl)  4.5615E+01 0.0084   4.5512E+01 0.0086
  source points generated   4858                source_entropy  5.8018E+00
- master set rendezvous nps =      490541    01/21/25 21:46:55 
+ master set rendezvous nps =      490541    01/21/25 23:26:14 
 
   estimator     cycle    98   ave of    93 cycles      combination         simple average    combined average     corr
  k(collision)      1.051149       1.045446 0.0010     k(col/abs)          1.045446 0.0010     1.045446 0.0010   1.0000
@@ -976,7 +981,7 @@
  rem life(col)   4.6908E+01     4.5702E+01 0.0087     k(col/abs/tk ln)    1.045484 0.0010     1.045491 0.0010
  rem life(abs)   4.6690E+01     4.5517E+01 0.0082     life(col/abs/tl)  4.5626E+01 0.0083   4.5522E+01 0.0085
  source points generated   5123                source_entropy  5.8418E+00
- master set rendezvous nps =      495664    01/21/25 21:46:55 
+ master set rendezvous nps =      495664    01/21/25 23:26:14 
 
   estimator     cycle    99   ave of    94 cycles      combination         simple average    combined average     corr
  k(collision)      1.044761       1.045439 0.0010     k(col/abs)          1.045439 0.0010     1.045439 0.0010   1.0000
@@ -985,8 +990,8 @@
  rem life(col)   4.8034E+01     4.5727E+01 0.0086     k(col/abs/tk ln)    1.045478 0.0010     1.045486 0.0010
  rem life(abs)   4.7417E+01     4.5537E+01 0.0081     life(col/abs/tl)  4.5651E+01 0.0082   4.5536E+01 0.0085
  source points generated   5020                source_entropy  5.8103E+00
- master set rendezvous nps =      500000    01/21/25 21:46:55 
- master set rendezvous nps =      500684    01/21/25 21:46:55 
+ master set rendezvous nps =      500000    01/21/25 23:26:14 
+ master set rendezvous nps =      500684    01/21/25 23:26:14 
 
   estimator     cycle   100   ave of    95 cycles      combination         simple average    combined average     corr
  k(collision)      1.054102       1.045530 0.0010     k(col/abs)          1.045530 0.0010     1.045530 0.0010   1.0000
@@ -999,8 +1004,8 @@
 1problem summary (active cycles only)              source particle weight for summary table normalization =       475000.00
 
       run terminated when 100 kcode cycles were done." 
-+                                                                                                    01/21/25 21:46:55 
-      C Cell Cards                                                                         probid =  01/21/25 21:46:49 
++                                                                                                    01/21/25 23:26:14 
+      C Cell Cards                                                                         probid =  01/21/25 23:26:09 
 0
  neutron creation    tracks      weight        energy            neutron loss        tracks      weight        energy
                                  (per source particle)                                           (per source particle)
@@ -1028,14 +1033,14 @@
    total neutron collisions                  3467703          capture or escape 5.3329E+01          wc1  -5.0000E-01
    net multiplication              1.0024E+00 0.0001          any termination   4.4957E+01          wc2  -2.5000E-01
 
- computer time so far in this run     2.70 minutes            maximum number ever in bank         2
- computer time in mcrun               1.91 minutes            bank overflows to backup file       0
- source particles per minute            2.6154E+05
+ computer time so far in this run     2.76 minutes            maximum number ever in bank         2
+ computer time in mcrun               2.00 minutes            bank overflows to backup file       0
+ source particles per minute            2.5014E+05
  random numbers generated                 47560501            most random numbers used was        1981 in history      126609
 
  range of sampled source weights = 7.1582E-01 to 1.1669E+00
 
- estimated system efficiency:  net = 73%  loss = 20% (locks) +  7% (comm.) +  1% (misc.)
+ estimated system efficiency:  net = 74%  loss = 19% (locks) +  6% (comm.) +  1% (misc.)
 
  number of histories processed by each task
            0       10599       10655       10652       10655       10643       10656       10660       10652       10651
@@ -1053,7 +1058,7 @@
      2     2      461822       420670      1608899    2.0695E+00   3.5137E-03   1.0674E+00   6.6668E-01   2.2947E+00
 
      total       1026089       897376      3467703    4.5957E+00
-1keff results for: C Cell Cards                                                                         probid =  01/21/25 21:46:49 
+1keff results for: C Cell Cards                                                                         probid =  01/21/25 23:26:09 
 
 
  the initial fission neutron source distribution used the   1 source points that were input on the ksrc card.
@@ -1159,107 +1164,107 @@
      6        4859 | 1.04790  1.04790  1.04389  | 
      7        4898 | 1.06656  1.06656  1.06410  |  1.05723 0.00933   1.05723 0.00933   1.05399 0.01010  | 
      8        5150 | 1.04911  1.04911  1.03916  |  1.05453 0.00603   1.05453 0.00603   1.04905 0.00765  | 
-     9        4960 | 1.05868  1.05868  1.04764  |  1.05557 0.00439   1.05557 0.00439   1.04870 0.00542  |  1.05979 0.01084    140633
-    10        5117 | 1.04932  1.04932  1.05619  |  1.05432 0.00362   1.05432 0.00362   1.05020 0.00446  |  1.05361 0.00491    532204
+     9        4960 | 1.05868  1.05868  1.04764  |  1.05557 0.00439   1.05557 0.00439   1.04870 0.00542  |  1.05979 0.01084    134617
+    10        5117 | 1.04932  1.04932  1.05619  |  1.05432 0.00362   1.05432 0.00362   1.05020 0.00446  |  1.05361 0.00491    508924
  -----------------------------------------------------------------------------------------------------------------------------------
-    11        4966 | 1.03978  1.03978  1.03684  |  1.05189 0.00382   1.05189 0.00382   1.04797 0.00427  |  1.05095 0.00507    412701
-    12        5090 | 1.04070  1.04070  1.03775  |  1.05029 0.00360   1.05029 0.00360   1.04651 0.00389  |  1.04922 0.00473    401353
-    13        4923 | 1.04776  1.04776  1.03369  |  1.04998 0.00314   1.04998 0.00314   1.04491 0.00373  |  1.04937 0.00438    411235
-    14        4936 | 1.03621  1.03621  1.04575  |  1.04845 0.00316   1.04845 0.00316   1.04500 0.00329  |  1.04694 0.00348    575946
-    15        5013 | 1.02687  1.02687  1.02737  |  1.04629 0.00356   1.04629 0.00356   1.04324 0.00343  |  1.04452 0.00379    432908
-    16        4962 | 1.05433  1.05433  1.05229  |  1.04702 0.00330   1.04702 0.00330   1.04406 0.00321  |  1.04535 0.00353    454904
-    17        5083 | 1.05117  1.05117  1.04245  |  1.04737 0.00303   1.04737 0.00303   1.04393 0.00293  |  1.04540 0.00331    474978
-    18        4866 | 1.07058  1.07058  1.06534  |  1.04915 0.00331   1.04915 0.00331   1.04557 0.00316  |  1.04686 0.00369    354328
-    19        5066 | 1.03910  1.03910  1.04605  |  1.04843 0.00315   1.04843 0.00315   1.04561 0.00293  |  1.04648 0.00324    427815
-    20        4850 | 1.04299  1.04299  1.03942  |  1.04807 0.00295   1.04807 0.00295   1.04520 0.00276  |  1.04610 0.00306    446696
+    11        4966 | 1.03978  1.03978  1.03684  |  1.05189 0.00382   1.05189 0.00382   1.04797 0.00427  |  1.05095 0.00507    394717
+    12        5090 | 1.04070  1.04070  1.03775  |  1.05029 0.00360   1.05029 0.00360   1.04651 0.00389  |  1.04922 0.00473    383563
+    13        4923 | 1.04776  1.04776  1.03369  |  1.04998 0.00314   1.04998 0.00314   1.04491 0.00373  |  1.04937 0.00438    393424
+    14        4936 | 1.03621  1.03621  1.04575  |  1.04845 0.00316   1.04845 0.00316   1.04500 0.00329  |  1.04694 0.00348    551404
+    15        5013 | 1.02687  1.02687  1.02737  |  1.04629 0.00356   1.04629 0.00356   1.04324 0.00343  |  1.04452 0.00379    414292
+    16        4962 | 1.05433  1.05433  1.05229  |  1.04702 0.00330   1.04702 0.00330   1.04406 0.00321  |  1.04535 0.00353    434613
+    17        5083 | 1.05117  1.05117  1.04245  |  1.04737 0.00303   1.04737 0.00303   1.04393 0.00293  |  1.04540 0.00331    453934
+    18        4866 | 1.07058  1.07058  1.06534  |  1.04915 0.00331   1.04915 0.00331   1.04557 0.00316  |  1.04686 0.00369    338065
+    19        5066 | 1.03910  1.03910  1.04605  |  1.04843 0.00315   1.04843 0.00315   1.04561 0.00293  |  1.04648 0.00324    408039
+    20        4850 | 1.04299  1.04299  1.03942  |  1.04807 0.00295   1.04807 0.00295   1.04520 0.00276  |  1.04610 0.00306    425991
  -----------------------------------------------------------------------------------------------------------------------------------
-    21        5077 | 1.03514  1.03514  1.03867  |  1.04726 0.00288   1.04726 0.00288   1.04479 0.00261  |  1.04538 0.00286    480211
-    22        4925 | 1.05669  1.05669  1.04586  |  1.04782 0.00276   1.04782 0.00276   1.04485 0.00245  |  1.04547 0.00275    487503
-    23        5070 | 1.04548  1.04548  1.04000  |  1.04769 0.00261   1.04769 0.00261   1.04458 0.00233  |  1.04527 0.00263    500800
-    24        4940 | 1.02986  1.02986  1.03764  |  1.04675 0.00264   1.04675 0.00264   1.04422 0.00223  |  1.04449 0.00245    548893
-    25        4874 | 1.05299  1.05299  1.06565  |  1.04706 0.00252   1.04706 0.00252   1.04529 0.00237  |  1.04595 0.00242    536933
-    26        5095 | 1.05642  1.05642  1.06025  |  1.04751 0.00244   1.04751 0.00244   1.04600 0.00237  |  1.04666 0.00237    534191
-    27        4994 | 1.05398  1.05398  1.05768  |  1.04780 0.00234   1.04780 0.00234   1.04653 0.00232  |  1.04714 0.00228    548684
-    28        4997 | 1.06429  1.06429  1.06735  |  1.04852 0.00235   1.04852 0.00235   1.04744 0.00239  |  1.04802 0.00233    506633
-    29        5036 | 1.04122  1.04122  1.04260  |  1.04821 0.00227   1.04821 0.00227   1.04724 0.00230  |  1.04775 0.00224    524571
-    30        4834 | 1.05313  1.05313  1.06661  |  1.04841 0.00219   1.04841 0.00219   1.04801 0.00234  |  1.04827 0.00217    536380
+    21        5077 | 1.03514  1.03514  1.03867  |  1.04726 0.00288   1.04726 0.00288   1.04479 0.00261  |  1.04538 0.00286    458205
+    22        4925 | 1.05669  1.05669  1.04586  |  1.04782 0.00276   1.04782 0.00276   1.04485 0.00245  |  1.04547 0.00275    465767
+    23        5070 | 1.04548  1.04548  1.04000  |  1.04769 0.00261   1.04769 0.00261   1.04458 0.00233  |  1.04527 0.00263    478697
+    24        4940 | 1.02986  1.02986  1.03764  |  1.04675 0.00264   1.04675 0.00264   1.04422 0.00223  |  1.04449 0.00245    524764
+    25        4874 | 1.05299  1.05299  1.06565  |  1.04706 0.00252   1.04706 0.00252   1.04529 0.00237  |  1.04595 0.00242    513279
+    26        5095 | 1.05642  1.05642  1.06025  |  1.04751 0.00244   1.04751 0.00244   1.04600 0.00237  |  1.04666 0.00237    511101
+    27        4994 | 1.05398  1.05398  1.05768  |  1.04780 0.00234   1.04780 0.00234   1.04653 0.00232  |  1.04714 0.00228    524787
+    28        4997 | 1.06429  1.06429  1.06735  |  1.04852 0.00235   1.04852 0.00235   1.04744 0.00239  |  1.04802 0.00233    484822
+    29        5036 | 1.04122  1.04122  1.04260  |  1.04821 0.00227   1.04821 0.00227   1.04724 0.00230  |  1.04775 0.00224    502281
+    30        4834 | 1.05313  1.05313  1.06661  |  1.04841 0.00219   1.04841 0.00219   1.04801 0.00234  |  1.04827 0.00217    513343
  -----------------------------------------------------------------------------------------------------------------------------------
-    31        5000 | 1.05033  1.05033  1.05587  |  1.04849 0.00210   1.04849 0.00210   1.04831 0.00227  |  1.04843 0.00209    557785
-    32        5016 | 1.02740  1.02740  1.03736  |  1.04770 0.00217   1.04770 0.00217   1.04791 0.00222  |  1.04780 0.00211    525517
-    33        4830 | 1.04895  1.04895  1.03920  |  1.04775 0.00209   1.04775 0.00209   1.04760 0.00216  |  1.04768 0.00203    545197
-    34        5110 | 1.03192  1.03192  1.02875  |  1.04720 0.00209   1.04720 0.00209   1.04695 0.00218  |  1.04710 0.00205    516332
-    35        4921 | 1.03308  1.03308  1.04582  |  1.04673 0.00207   1.04673 0.00207   1.04691 0.00211  |  1.04681 0.00200    524480
-    36        4964 | 1.04777  1.04777  1.04486  |  1.04677 0.00201   1.04677 0.00201   1.04684 0.00204  |  1.04680 0.00193    543197
-    37        5036 | 1.05216  1.05216  1.05736  |  1.04693 0.00195   1.04693 0.00195   1.04717 0.00200  |  1.04704 0.00189    552261
-    38        5000 | 1.06442  1.06442  1.06502  |  1.04746 0.00196   1.04746 0.00196   1.04771 0.00202  |  1.04757 0.00191    525285
-    39        5075 | 1.05989  1.05989  1.05362  |  1.04783 0.00194   1.04783 0.00194   1.04789 0.00196  |  1.04786 0.00187    530420
-    40        5067 | 1.04372  1.04372  1.02801  |  1.04771 0.00189   1.04771 0.00189   1.04732 0.00199  |  1.04756 0.00185    528994
+    31        5000 | 1.05033  1.05033  1.05587  |  1.04849 0.00210   1.04849 0.00210   1.04831 0.00227  |  1.04843 0.00209    534032
+    32        5016 | 1.02740  1.02740  1.03736  |  1.04770 0.00217   1.04770 0.00217   1.04791 0.00222  |  1.04780 0.00211    502829
+    33        4830 | 1.04895  1.04895  1.03920  |  1.04775 0.00209   1.04775 0.00209   1.04760 0.00216  |  1.04768 0.00203    521665
+    34        5110 | 1.03192  1.03192  1.02875  |  1.04720 0.00209   1.04720 0.00209   1.04695 0.00218  |  1.04710 0.00205    494262
+    35        4921 | 1.03308  1.03308  1.04582  |  1.04673 0.00207   1.04673 0.00207   1.04691 0.00211  |  1.04681 0.00200    502010
+    36        4964 | 1.04777  1.04777  1.04486  |  1.04677 0.00201   1.04677 0.00201   1.04684 0.00204  |  1.04680 0.00193    520146
+    37        5036 | 1.05216  1.05216  1.05736  |  1.04693 0.00195   1.04693 0.00195   1.04717 0.00200  |  1.04704 0.00189    528980
+    38        5000 | 1.06442  1.06442  1.06502  |  1.04746 0.00196   1.04746 0.00196   1.04771 0.00202  |  1.04757 0.00191    503423
+    39        5075 | 1.05989  1.05989  1.05362  |  1.04783 0.00194   1.04783 0.00194   1.04789 0.00196  |  1.04786 0.00187    508759
+    40        5067 | 1.04372  1.04372  1.02801  |  1.04771 0.00189   1.04771 0.00189   1.04732 0.00199  |  1.04756 0.00185    507307
  -----------------------------------------------------------------------------------------------------------------------------------
-    41        5033 | 1.03961  1.03961  1.05099  |  1.04749 0.00185   1.04749 0.00185   1.04742 0.00194  |  1.04746 0.00179    544302
-    42        5002 | 1.03508  1.03508  1.01108  |  1.04715 0.00183   1.04715 0.00183   1.04644 0.00212  |  1.04700 0.00183    507029
-    43        5113 | 1.03171  1.03171  1.03861  |  1.04675 0.00182   1.04675 0.00182   1.04623 0.00208  |  1.04661 0.00182    501080
-    44        4980 | 1.04865  1.04865  1.05795  |  1.04679 0.00178   1.04679 0.00178   1.04653 0.00205  |  1.04673 0.00177    514316
-    45        5025 | 1.03050  1.03050  1.03442  |  1.04639 0.00178   1.04639 0.00178   1.04623 0.00202  |  1.04635 0.00177    502655
-    46        5038 | 1.04090  1.04090  1.06083  |  1.04625 0.00174   1.04625 0.00174   1.04659 0.00200  |  1.04634 0.00172    515379
-    47        5019 | 1.04424  1.04424  1.05564  |  1.04620 0.00170   1.04620 0.00170   1.04680 0.00196  |  1.04636 0.00168    527069
-    48        5038 | 1.04581  1.04581  1.03562  |  1.04620 0.00166   1.04620 0.00166   1.04654 0.00193  |  1.04628 0.00164    540469
-    49        4884 | 1.03971  1.03971  1.04432  |  1.04605 0.00163   1.04605 0.00163   1.04649 0.00189  |  1.04616 0.00161    549932
-    50        4966 | 1.04884  1.04884  1.04589  |  1.04611 0.00159   1.04611 0.00159   1.04648 0.00185  |  1.04621 0.00157    563166
+    41        5033 | 1.03961  1.03961  1.05099  |  1.04749 0.00185   1.04749 0.00185   1.04742 0.00194  |  1.04746 0.00179    521915
+    42        5002 | 1.03508  1.03508  1.01108  |  1.04715 0.00183   1.04715 0.00183   1.04644 0.00212  |  1.04700 0.00183    486190
+    43        5113 | 1.03171  1.03171  1.03861  |  1.04675 0.00182   1.04675 0.00182   1.04623 0.00208  |  1.04661 0.00182    480621
+    44        4980 | 1.04865  1.04865  1.05795  |  1.04679 0.00178   1.04679 0.00178   1.04653 0.00205  |  1.04673 0.00177    493370
+    45        5025 | 1.03050  1.03050  1.03442  |  1.04639 0.00178   1.04639 0.00178   1.04623 0.00202  |  1.04635 0.00177    482255
+    46        5038 | 1.04090  1.04090  1.06083  |  1.04625 0.00174   1.04625 0.00174   1.04659 0.00200  |  1.04634 0.00172    494411
+    47        5019 | 1.04424  1.04424  1.05564  |  1.04620 0.00170   1.04620 0.00170   1.04680 0.00196  |  1.04636 0.00168    505439
+    48        5038 | 1.04581  1.04581  1.03562  |  1.04620 0.00166   1.04620 0.00166   1.04654 0.00193  |  1.04628 0.00164    518069
+    49        4884 | 1.03971  1.03971  1.04432  |  1.04605 0.00163   1.04605 0.00163   1.04649 0.00189  |  1.04616 0.00161    526944
+    50        4966 | 1.04884  1.04884  1.04589  |  1.04611 0.00159   1.04611 0.00159   1.04648 0.00185  |  1.04621 0.00157    539510
  -----------------------------------------------------------------------------------------------------------------------------------
-    51        5161 | 1.04812  1.04812  1.03985  |  1.04615 0.00156   1.04615 0.00156   1.04633 0.00181  |  1.04620 0.00154    576591
-    52        5006 | 1.03068  1.03068  1.01769  |  1.04582 0.00156   1.04582 0.00156   1.04572 0.00188  |  1.04581 0.00156    550925
-    53        4822 | 1.04842  1.04842  1.04329  |  1.04588 0.00153   1.04588 0.00153   1.04567 0.00184  |  1.04584 0.00152    563249
-    54        5065 | 1.04896  1.04896  1.03999  |  1.04594 0.00150   1.04594 0.00150   1.04556 0.00180  |  1.04587 0.00149    574226
-    55        4972 | 1.05327  1.05327  1.05292  |  1.04609 0.00148   1.04609 0.00148   1.04570 0.00177  |  1.04601 0.00147    580737
-    56        4990 | 1.04898  1.04898  1.04428  |  1.04615 0.00145   1.04615 0.00145   1.04568 0.00174  |  1.04605 0.00144    591818
-    57        4900 | 1.04489  1.04489  1.06030  |  1.04612 0.00142   1.04612 0.00142   1.04596 0.00173  |  1.04609 0.00141    605296
-    58        4990 | 1.04175  1.04175  1.04774  |  1.04604 0.00139   1.04604 0.00139   1.04599 0.00169  |  1.04603 0.00139    616521
-    59        4977 | 1.05382  1.05382  1.04874  |  1.04618 0.00138   1.04618 0.00138   1.04604 0.00166  |  1.04615 0.00137    623550
-    60        5101 | 1.07120  1.07120  1.05126  |  1.04664 0.00143   1.04664 0.00143   1.04614 0.00164  |  1.04649 0.00139    590190
+    51        5161 | 1.04812  1.04812  1.03985  |  1.04615 0.00156   1.04615 0.00156   1.04633 0.00181  |  1.04620 0.00154    552438
+    52        5006 | 1.03068  1.03068  1.01769  |  1.04582 0.00156   1.04582 0.00156   1.04572 0.00188  |  1.04581 0.00156    527783
+    53        4822 | 1.04842  1.04842  1.04329  |  1.04588 0.00153   1.04588 0.00153   1.04567 0.00184  |  1.04584 0.00152    539272
+    54        5065 | 1.04896  1.04896  1.03999  |  1.04594 0.00150   1.04594 0.00150   1.04556 0.00180  |  1.04587 0.00149    549876
+    55        4972 | 1.05327  1.05327  1.05292  |  1.04609 0.00148   1.04609 0.00148   1.04570 0.00177  |  1.04601 0.00147    556201
+    56        4990 | 1.04898  1.04898  1.04428  |  1.04615 0.00145   1.04615 0.00145   1.04568 0.00174  |  1.04605 0.00144    566884
+    57        4900 | 1.04489  1.04489  1.06030  |  1.04612 0.00142   1.04612 0.00142   1.04596 0.00173  |  1.04609 0.00141    579541
+    58        4990 | 1.04175  1.04175  1.04774  |  1.04604 0.00139   1.04604 0.00139   1.04599 0.00169  |  1.04603 0.00139    590240
+    59        4977 | 1.05382  1.05382  1.04874  |  1.04618 0.00138   1.04618 0.00138   1.04604 0.00166  |  1.04615 0.00137    596835
+    60        5101 | 1.07120  1.07120  1.05126  |  1.04664 0.00143   1.04664 0.00143   1.04614 0.00164  |  1.04649 0.00139    564769
  -----------------------------------------------------------------------------------------------------------------------------------
-    61        5126 | 1.05738  1.05738  1.05792  |  1.04683 0.00141   1.04683 0.00141   1.04635 0.00162  |  1.04669 0.00138    589150
-    62        4893 | 1.05724  1.05724  1.05505  |  1.04701 0.00140   1.04701 0.00140   1.04650 0.00160  |  1.04686 0.00137    590504
-    63        5043 | 1.03494  1.03494  1.02969  |  1.04680 0.00139   1.04680 0.00139   1.04621 0.00160  |  1.04664 0.00136    582023
-    64        4950 | 1.04693  1.04693  1.03949  |  1.04681 0.00137   1.04681 0.00137   1.04610 0.00157  |  1.04661 0.00134    590985
-    65        4997 | 1.04642  1.04642  1.04602  |  1.04680 0.00134   1.04680 0.00134   1.04609 0.00155  |  1.04660 0.00132    601236
-    66        5108 | 1.05077  1.05077  1.03287  |  1.04686 0.00132   1.04686 0.00132   1.04588 0.00154  |  1.04659 0.00130    607859
-    67        4937 | 1.02900  1.02900  1.02763  |  1.04658 0.00133   1.04658 0.00133   1.04558 0.00154  |  1.04630 0.00131    586615
-    68        4856 | 1.03498  1.03498  1.02950  |  1.04639 0.00133   1.04639 0.00133   1.04533 0.00154  |  1.04611 0.00131    580485
-    69        4978 | 1.03646  1.03646  1.02932  |  1.04624 0.00131   1.04624 0.00131   1.04508 0.00153  |  1.04595 0.00130    576556
-    70        5094 | 1.03786  1.03786  1.03957  |  1.04611 0.00130   1.04611 0.00130   1.04499 0.00151  |  1.04582 0.00129    581023
+    61        5126 | 1.05738  1.05738  1.05792  |  1.04683 0.00141   1.04683 0.00141   1.04635 0.00162  |  1.04669 0.00138    563586
+    62        4893 | 1.05724  1.05724  1.05505  |  1.04701 0.00140   1.04701 0.00140   1.04650 0.00160  |  1.04686 0.00137    564734
+    63        5043 | 1.03494  1.03494  1.02969  |  1.04680 0.00139   1.04680 0.00139   1.04621 0.00160  |  1.04664 0.00136    556827
+    64        4950 | 1.04693  1.04693  1.03949  |  1.04681 0.00137   1.04681 0.00137   1.04610 0.00157  |  1.04661 0.00134    565294
+    65        4997 | 1.04642  1.04642  1.04602  |  1.04680 0.00134   1.04680 0.00134   1.04609 0.00155  |  1.04660 0.00132    575079
+    66        5108 | 1.05077  1.05077  1.03287  |  1.04686 0.00132   1.04686 0.00132   1.04588 0.00154  |  1.04659 0.00130    581604
+    67        4937 | 1.02900  1.02900  1.02763  |  1.04658 0.00133   1.04658 0.00133   1.04558 0.00154  |  1.04630 0.00131    561384
+    68        4856 | 1.03498  1.03498  1.02950  |  1.04639 0.00133   1.04639 0.00133   1.04533 0.00154  |  1.04611 0.00131    555219
+    69        4978 | 1.03646  1.03646  1.02932  |  1.04624 0.00131   1.04624 0.00131   1.04508 0.00153  |  1.04595 0.00130    551382
+    70        5094 | 1.03786  1.03786  1.03957  |  1.04611 0.00130   1.04611 0.00130   1.04499 0.00151  |  1.04582 0.00129    555497
  -----------------------------------------------------------------------------------------------------------------------------------
-    71        5036 | 1.03909  1.03909  1.04291  |  1.04600 0.00128   1.04600 0.00128   1.04496 0.00149  |  1.04573 0.00127    588117
-    72        4971 | 1.04986  1.04986  1.03753  |  1.04606 0.00127   1.04606 0.00127   1.04485 0.00147  |  1.04574 0.00125    594651
-    73        5015 | 1.04234  1.04234  1.04323  |  1.04600 0.00125   1.04600 0.00125   1.04483 0.00145  |  1.04569 0.00124    603032
-    74        4909 | 1.05992  1.05992  1.05781  |  1.04621 0.00125   1.04621 0.00125   1.04502 0.00144  |  1.04589 0.00124    596087
-    75        5150 | 1.04016  1.04016  1.05834  |  1.04612 0.00123   1.04612 0.00123   1.04521 0.00143  |  1.04587 0.00121    609681
-    76        4892 | 1.05484  1.05484  1.05025  |  1.04624 0.00122   1.04624 0.00122   1.04528 0.00141  |  1.04598 0.00120    612951
-    77        5067 | 1.03549  1.03549  1.04823  |  1.04609 0.00121   1.04609 0.00121   1.04532 0.00140  |  1.04587 0.00119    619970
-    78        4929 | 1.03756  1.03756  1.04784  |  1.04598 0.00120   1.04598 0.00120   1.04535 0.00138  |  1.04579 0.00117    628169
-    79        5036 | 1.03842  1.03842  1.04180  |  1.04587 0.00119   1.04587 0.00119   1.04530 0.00136  |  1.04570 0.00116    633672
-    80        5010 | 1.03310  1.03310  1.03661  |  1.04570 0.00119   1.04570 0.00119   1.04519 0.00135  |  1.04554 0.00115    630988
+    71        5036 | 1.03909  1.03909  1.04291  |  1.04600 0.00128   1.04600 0.00128   1.04496 0.00149  |  1.04573 0.00127    562321
+    72        4971 | 1.04986  1.04986  1.03753  |  1.04606 0.00127   1.04606 0.00127   1.04485 0.00147  |  1.04574 0.00125    568401
+    73        5015 | 1.04234  1.04234  1.04323  |  1.04600 0.00125   1.04600 0.00125   1.04483 0.00145  |  1.04569 0.00124    576598
+    74        4909 | 1.05992  1.05992  1.05781  |  1.04621 0.00125   1.04621 0.00125   1.04502 0.00144  |  1.04589 0.00124    569865
+    75        5150 | 1.04016  1.04016  1.05834  |  1.04612 0.00123   1.04612 0.00123   1.04521 0.00143  |  1.04587 0.00121    582856
+    76        4892 | 1.05484  1.05484  1.05025  |  1.04624 0.00122   1.04624 0.00122   1.04528 0.00141  |  1.04598 0.00120    585990
+    77        5067 | 1.03549  1.03549  1.04823  |  1.04609 0.00121   1.04609 0.00121   1.04532 0.00140  |  1.04587 0.00119    592746
+    78        4929 | 1.03756  1.03756  1.04784  |  1.04598 0.00120   1.04598 0.00120   1.04535 0.00138  |  1.04579 0.00117    600501
+    79        5036 | 1.03842  1.03842  1.04180  |  1.04587 0.00119   1.04587 0.00119   1.04530 0.00136  |  1.04570 0.00116    605745
+    80        5010 | 1.03310  1.03310  1.03661  |  1.04570 0.00119   1.04570 0.00119   1.04519 0.00135  |  1.04554 0.00115    603277
  -----------------------------------------------------------------------------------------------------------------------------------
-    81        4981 | 1.03748  1.03748  1.03810  |  1.04560 0.00118   1.04560 0.00118   1.04510 0.00133  |  1.04544 0.00114    634279
-    82        5063 | 1.05466  1.05466  1.05642  |  1.04571 0.00117   1.04571 0.00117   1.04524 0.00132  |  1.04557 0.00113    635010
-    83        5078 | 1.05588  1.05588  1.05281  |  1.04584 0.00116   1.04584 0.00116   1.04534 0.00131  |  1.04569 0.00112    636039
-    84        5034 | 1.02042  1.02042  1.03074  |  1.04552 0.00119   1.04552 0.00119   1.04515 0.00130  |  1.04539 0.00114    606680
-    85        4874 | 1.04640  1.04640  1.05049  |  1.04553 0.00117   1.04553 0.00117   1.04522 0.00129  |  1.04542 0.00113    614674
-    86        5078 | 1.03587  1.03587  1.04235  |  1.04541 0.00116   1.04541 0.00116   1.04519 0.00127  |  1.04533 0.00112    618541
-    87        4950 | 1.04800  1.04800  1.04673  |  1.04545 0.00115   1.04545 0.00115   1.04520 0.00126  |  1.04536 0.00110    625904
-    88        4973 | 1.03534  1.03534  1.03060  |  1.04532 0.00114   1.04532 0.00114   1.04503 0.00126  |  1.04522 0.00110    622624
-    89        5050 | 1.05262  1.05262  1.04875  |  1.04541 0.00113   1.04541 0.00113   1.04507 0.00124  |  1.04529 0.00109    627230
-    90        5211 | 1.05844  1.05844  1.05611  |  1.04556 0.00113   1.04556 0.00113   1.04520 0.00123  |  1.04543 0.00109    623210
+    81        4981 | 1.03748  1.03748  1.03810  |  1.04560 0.00118   1.04560 0.00118   1.04510 0.00133  |  1.04544 0.00114    606389
+    82        5063 | 1.05466  1.05466  1.05642  |  1.04571 0.00117   1.04571 0.00117   1.04524 0.00132  |  1.04557 0.00113    607042
+    83        5078 | 1.05588  1.05588  1.05281  |  1.04584 0.00116   1.04584 0.00116   1.04534 0.00131  |  1.04569 0.00112    607843
+    84        5034 | 1.02042  1.02042  1.03074  |  1.04552 0.00119   1.04552 0.00119   1.04515 0.00130  |  1.04539 0.00114    579671
+    85        4874 | 1.04640  1.04640  1.05049  |  1.04553 0.00117   1.04553 0.00117   1.04522 0.00129  |  1.04542 0.00113    587248
+    86        5078 | 1.03587  1.03587  1.04235  |  1.04541 0.00116   1.04541 0.00116   1.04519 0.00127  |  1.04533 0.00112    590973
+    87        4950 | 1.04800  1.04800  1.04673  |  1.04545 0.00115   1.04545 0.00115   1.04520 0.00126  |  1.04536 0.00110    598113
+    88        4973 | 1.03534  1.03534  1.03060  |  1.04532 0.00114   1.04532 0.00114   1.04503 0.00126  |  1.04522 0.00110    595067
+    89        5050 | 1.05262  1.05262  1.04875  |  1.04541 0.00113   1.04541 0.00113   1.04507 0.00124  |  1.04529 0.00109    599478
+    90        5211 | 1.05844  1.05844  1.05611  |  1.04556 0.00113   1.04556 0.00113   1.04520 0.00123  |  1.04543 0.00109    595802
  -----------------------------------------------------------------------------------------------------------------------------------
-    91        5090 | 1.03745  1.03745  1.05953  |  1.04547 0.00112   1.04547 0.00112   1.04537 0.00123  |  1.04543 0.00107    631654
-    92        4835 | 1.03718  1.03718  1.04466  |  1.04537 0.00111   1.04537 0.00111   1.04536 0.00122  |  1.04537 0.00106    636960
-    93        4963 | 1.04275  1.04275  1.05116  |  1.04534 0.00110   1.04534 0.00110   1.04543 0.00120  |  1.04537 0.00105    644250
-    94        5082 | 1.05220  1.05220  1.05056  |  1.04542 0.00109   1.04542 0.00109   1.04548 0.00119  |  1.04544 0.00104    648847
-    95        4973 | 1.05050  1.05050  1.04913  |  1.04548 0.00108   1.04548 0.00108   1.04553 0.00118  |  1.04550 0.00103    654826
-    96        5019 | 1.05562  1.05562  1.05473  |  1.04559 0.00107   1.04559 0.00107   1.04563 0.00117  |  1.04560 0.00102    655061
-    97        4969 | 1.02676  1.02676  1.04718  |  1.04538 0.00108   1.04538 0.00108   1.04564 0.00116  |  1.04549 0.00102    652364
-    98        4858 | 1.05115  1.05115  1.03769  |  1.04545 0.00107   1.04545 0.00107   1.04556 0.00115  |  1.04549 0.00101    660153
-    99        5123 | 1.04476  1.04476  1.04537  |  1.04544 0.00106   1.04544 0.00106   1.04556 0.00114  |  1.04549 0.00100    667163
-   100        5020 | 1.05410  1.05410  1.04175  |  1.04553 0.00105   1.04553 0.00105   1.04552 0.00113  |  1.04552 0.00099    673691
+    91        5090 | 1.03745  1.03745  1.05953  |  1.04547 0.00112   1.04547 0.00112   1.04537 0.00123  |  1.04543 0.00107    603990
+    92        4835 | 1.03718  1.03718  1.04466  |  1.04537 0.00111   1.04537 0.00111   1.04536 0.00122  |  1.04537 0.00106    609071
+    93        4963 | 1.04275  1.04275  1.05116  |  1.04534 0.00110   1.04534 0.00110   1.04543 0.00120  |  1.04537 0.00105    616152
+    94        5082 | 1.05220  1.05220  1.05056  |  1.04542 0.00109   1.04542 0.00109   1.04548 0.00119  |  1.04544 0.00104    620634
+    95        4973 | 1.05050  1.05050  1.04913  |  1.04548 0.00108   1.04548 0.00108   1.04553 0.00118  |  1.04550 0.00103    626464
+    96        5019 | 1.05562  1.05562  1.05473  |  1.04559 0.00107   1.04559 0.00107   1.04563 0.00117  |  1.04560 0.00102    626671
+    97        4969 | 1.02676  1.02676  1.04718  |  1.04538 0.00108   1.04538 0.00108   1.04564 0.00116  |  1.04549 0.00102    624143
+    98        4858 | 1.05115  1.05115  1.03769  |  1.04545 0.00107   1.04545 0.00107   1.04556 0.00115  |  1.04549 0.00101    631673
+    99        5123 | 1.04476  1.04476  1.04537  |  1.04544 0.00106   1.04544 0.00106   1.04556 0.00114  |  1.04549 0.00100    638404
+   100        5020 | 1.05410  1.05410  1.04175  |  1.04553 0.00105   1.04553 0.00105   1.04552 0.00113  |  1.04552 0.00099    644576
  -----------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -1665,12 +1670,12 @@
       relative error                  8.19669E-04             8.19479E-04                    -0.000231
       variance of the variance        6.53953E-06             6.58383E-06                     0.006774
       shifted center                  6.58774E-01             6.58774E-01                     0.000000
-      figure of merit                 8.20642E+05             8.21022E+05                     0.000463
+      figure of merit                 7.85176E+05             7.85540E+05                     0.000463
 
  the estimated slope of the 197 largest  tallies starting at  2.56947E+00 appears to be decreasing at least exponentially.
  the large score tail of the empirical history score probability density function appears to have no unsampled regions.
 
- fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (2.619E+05)*( 1.770E+00)**2 = (2.619E+05)*(3.134E+00) = 8.206E+05
+ fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (2.506E+05)*( 1.770E+00)**2 = (2.506E+05)*(3.134E+00) = 7.852E+05
 
 1tally   2        nps =      500684
            tally type 2    particle flux averaged over a surface.       units   1/cm**2   
@@ -1733,12 +1738,78 @@
       relative error                  2.26091E-03             2.26286E-03                     0.000864
       variance of the variance        2.52162E-04             2.55230E-04                     0.012167
       shifted center                  1.94009E-03             1.94009E-03                     0.000000
-      figure of merit                 1.07861E+05             1.07675E+05                    -0.001725
+      figure of merit                 1.03200E+05             1.03022E+05                    -0.001725
 
  the estimated slope of the 200 largest  tallies starting at  3.84350E+01 appears to be decreasing at least exponentially.
  the large score tail of the empirical history score probability density function appears to have no unsampled regions.
 
- fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (2.619E+05)*( 6.418E-01)**2 = (2.619E+05)*(4.119E-01) = 1.079E+05
+ fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (2.506E+05)*( 6.418E-01)**2 = (2.506E+05)*(4.119E-01) = 1.032E+05
+
+1tally   4        nps =      500684
+           tally type 4    track length estimate of particle flux.                        
+           tally for  neutrons 
+ number of histories used for normalizing tallies =       475000.00
+
+           volumes 
+                   cell:       1                                                                                   
+                         1.83878E+03
+ 
+ cell  1                                                                                                               
+ multiplier bin:  -1.00000E+00    1         -2    :       -6                                                           
+                 2.50401E-04 0.0011
+
+
+ ===================================================================================================================================
+
+           results of 10 statistical checks for the estimated answer for the tally fluctuation chart (tfc) bin of tally   4
+
+ tfc bin     --mean--      ---------relative error---------      ----variance of the variance----      --figure of merit--     -pdf-
+ behavior    behavior      value   decrease   decrease rate      value   decrease   decrease rate       value     behavior     slope
+
+ desired      random       <0.10      yes      1/sqrt(nps)       <0.10      yes        1/nps           constant    random      >3.00
+ observed     random        0.00      yes          yes            0.00      yes         yes            constant    random       8.96
+ passed?        yes          yes      yes          yes             yes      yes         yes               yes        yes         yes
+
+ ===================================================================================================================================
+
+
+ this tally meets the statistical criteria used to form confidence intervals: check the tally fluctuation chart to verify.
+ the results in other bins associated with this tally may not meet these statistical criteria.
+
+ ----- estimated confidence intervals:  -----
+
+ estimated asymmetric confidence interval(1,2,3 sigma): 2.5012E-04 to 2.5068E-04; 2.4984E-04 to 2.5096E-04; 2.4956E-04 to 2.5124E-04
+ estimated  symmetric confidence interval(1,2,3 sigma): 2.5012E-04 to 2.5068E-04; 2.4984E-04 to 2.5096E-04; 2.4956E-04 to 2.5124E-04
+
+1analysis of the results in the tally fluctuation chart bin (tfc) for tally   4 with nps =      500684  print table 160
+
+
+ normed average tally per history  = 2.50401E-04          unnormed average tally per history  = 4.60432E-01
+ estimated tally relative error    = 0.0011               estimated variance of the variance  = 0.0000
+ relative error from zero tallies  = 0.0000               relative error from nonzero scores  = 0.0011
+
+ number of nonzero history tallies =      474903          efficiency for the nonzero tallies  = 0.9998
+ history number of largest  tally  =      462636          largest  unnormalized history tally = 8.57070E+00
+ (largest  tally)/(average tally)  = 1.86145E+01          (largest  tally)/(avg nonzero tally)= 1.86107E+01
+
+ (confidence interval shift)/mean  = 0.0000               shifted confidence interval center  = 2.50402E-04
+
+
+ if the largest  history score sampled so far were to occur on the next history, the tfc bin quantities would change as follows:
+ nps =      474903 for this table because   5 keff cycles and       25781 histories were skipped before tally accumulation.
+
+      estimated quantities           value at nps           value at nps+1           value(nps+1)/value(nps)-1.
+
+      mean                            2.50401E-04             2.50410E-04                     0.000037
+      relative error                  1.11935E-03             1.11973E-03                     0.000338
+      variance of the variance        3.02617E-05             3.14082E-05                     0.037887
+      shifted center                  2.50402E-04             2.50402E-04                     0.000000
+      figure of merit                 4.21030E+05             4.20745E+05                    -0.000675
+
+ the estimated inverse power slope of the 200 largest  tallies starting at 3.40627E+00 is 8.9634
+ the large score tail of the empirical history score probability density function appears to have no unsampled regions.
+
+ fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (2.506E+05)*( 1.296E+00)**2 = (2.506E+05)*(1.680E+00) = 4.210E+05
 
 1tally   6        nps =      500684
 +                                   Heating per Neutron   HpN                                                  
@@ -1793,12 +1864,12 @@
       relative error                  1.04196E-03             1.04233E-03                     0.000348
       variance of the variance        2.68961E-05             2.82033E-05                     0.048600
       shifted center                  7.73293E+01             7.73293E+01                     0.000000
-      figure of merit                 5.07838E+05             5.07485E+05                    -0.000695
+      figure of merit                 4.85891E+05             4.85553E+05                    -0.000695
 
  the estimated inverse power slope of the 200 largest  tallies starting at 5.23450E+02 is 7.5600
  the large score tail of the empirical history score probability density function appears to have no unsampled regions.
 
- fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (2.619E+05)*( 1.393E+00)**2 = (2.619E+05)*(1.939E+00) = 5.078E+05
+ fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (2.506E+05)*( 1.393E+00)**2 = (2.506E+05)*(1.939E+00) = 4.859E+05
 
 1unnormed tally density for tally   6            nonzero tally mean(m) = 7.735E+01   nps =      500684  print table 161
 
@@ -1840,6 +1911,72 @@
  1.26+03     17 7.70-08  -7.113 ************  |             |s             |              |             |              |            
  1.58+03      2 1.29-08  -7.889 *             |   s         |              |              |             |              |            
   total  474903 1.00+00         d-------------d-------------d--------------d--------------d-------------d--------------d------------
+
+1tally  14        nps =      500684
+           tally type 4    track length estimate of particle flux.                        
+           tally for  neutrons 
+ number of histories used for normalizing tallies =       475000.00
+
+           volumes 
+                   cell:       2                                                                                   
+                         2.35001E+03
+ 
+ cell  2                                                                                                               
+ multiplier bin:  -1.98400E+01    2         -2    :       -6                                                           
+                 3.36224E-05 0.0081
+
+
+ ===================================================================================================================================
+
+           results of 10 statistical checks for the estimated answer for the tally fluctuation chart (tfc) bin of tally  14
+
+ tfc bin     --mean--      ---------relative error---------      ----variance of the variance----      --figure of merit--     -pdf-
+ behavior    behavior      value   decrease   decrease rate      value   decrease   decrease rate       value     behavior     slope
+
+ desired      random       <0.10      yes      1/sqrt(nps)       <0.10      yes        1/nps           constant    random      >3.00
+ observed     random        0.01      yes          yes            0.00      yes         yes            constant    random      10.00
+ passed?        yes          yes      yes          yes             yes      yes         yes               yes        yes         yes
+
+ ===================================================================================================================================
+
+
+ this tally meets the statistical criteria used to form confidence intervals: check the tally fluctuation chart to verify.
+ the results in other bins associated with this tally may not meet these statistical criteria.
+
+ ----- estimated confidence intervals:  -----
+
+ estimated asymmetric confidence interval(1,2,3 sigma): 3.3351E-05 to 3.3898E-05; 3.3078E-05 to 3.4171E-05; 3.2804E-05 to 3.4445E-05
+ estimated  symmetric confidence interval(1,2,3 sigma): 3.3349E-05 to 3.3896E-05; 3.3076E-05 to 3.4169E-05; 3.2802E-05 to 3.4443E-05
+
+1analysis of the results in the tally fluctuation chart bin (tfc) for tally  14 with nps =      500684  print table 160
+
+
+ normed average tally per history  = 3.36224E-05          unnormed average tally per history  = 7.90130E-02
+ estimated tally relative error    = 0.0081               estimated variance of the variance  = 0.0004
+ relative error from zero tallies  = 0.0005               relative error from nonzero scores  = 0.0081
+
+ number of nonzero history tallies =      419712          efficiency for the nonzero tallies  = 0.8836
+ history number of largest  tally  =      443652          largest  unnormalized history tally = 2.24286E+01
+ (largest  tally)/(average tally)  = 2.83860E+02          (largest  tally)/(avg nonzero tally)= 2.50820E+02
+
+ (confidence interval shift)/mean  = 0.0001               shifted confidence interval center  = 3.36246E-05
+
+
+ if the largest  history score sampled so far were to occur on the next history, the tfc bin quantities would change as follows:
+ nps =      474903 for this table because   5 keff cycles and       25781 histories were skipped before tally accumulation.
+
+      estimated quantities           value at nps           value at nps+1           value(nps+1)/value(nps)-1.
+
+      mean                            3.36224E-05             3.36424E-05                     0.000596
+      relative error                  8.13210E-03             8.14898E-03                     0.002075
+      variance of the variance        3.72520E-04             3.96974E-04                     0.065644
+      shifted center                  3.36246E-05             3.36246E-05                     0.000001
+      figure of merit                 7.97697E+03             7.94396E+03                    -0.004138
+
+ the estimated slope of the 200 largest  tallies starting at  7.67949E+00 appears to be decreasing at least exponentially.
+ the large score tail of the empirical history score probability density function appears to have no unsampled regions.
+
+ fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (2.506E+05)*( 1.784E-01)**2 = (2.506E+05)*(3.183E-02) = 7.977E+03
 
 1tally  16        nps =      500684
 +                                   Actual Core Power (ACP) [MW] TCP=1MW HpN=100 MeV/n                         
@@ -1896,12 +2033,12 @@
       relative error                  1.04196E-03             1.04233E-03                     0.000348
       variance of the variance        2.68961E-05             2.82033E-05                     0.048600
       shifted center                  7.73293E-01             7.73293E-01                     0.000000
-      figure of merit                 5.07838E+05             5.07485E+05                    -0.000695
+      figure of merit                 4.85891E+05             4.85553E+05                    -0.000695
 
  the estimated inverse power slope of the 200 largest  tallies starting at 5.23450E+00 is 7.5600
  the large score tail of the empirical history score probability density function appears to have no unsampled regions.
 
- fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (2.619E+05)*( 1.393E+00)**2 = (2.619E+05)*(1.939E+00) = 5.078E+05
+ fom = (histories/minute)*(f(x) signal-to-noise ratio)**2 = (2.506E+05)*( 1.393E+00)**2 = (2.506E+05)*(1.939E+00) = 4.859E+05
 
 1unnormed tally density for tally  16            nonzero tally mean(m) = 7.735E-01   nps =      500684  print table 161
 
@@ -1955,7 +2092,13 @@
      2   passed the 10 statistical checks for the tally fluctuation chart bin result               
          passed all bin error check:     2 tally bins all have relative errors less than 0.10 with no zero bins
 
+     4   passed the 10 statistical checks for the tally fluctuation chart bin result               
+         passed all bin error check:     1 tally bins all have relative errors less than 0.10 with no zero bins
+
      6   missed  1 of 10 tfc bin checks: the estimated mean has a trend during the last half of the problem                        
+         passed all bin error check:     1 tally bins all have relative errors less than 0.10 with no zero bins
+
+    14   passed the 10 statistical checks for the tally fluctuation chart bin result               
          passed all bin error check:     1 tally bins all have relative errors less than 0.10 with no zero bins
 
     16   missed  1 of 10 tfc bin checks: the estimated mean has a trend during the last half of the problem                        
@@ -1966,40 +2109,40 @@
 
  the tally bins with zeros may or may not be correct: compare the source, cutoffs, multipliers, et cetera with the tally bins.
 
- warning.     2 of the   4 tally fluctuation chart bins did not pass all 10 statistical checks.
+ warning.     2 of the   6 tally fluctuation chart bins did not pass all 10 statistical checks.
 1tally fluctuation charts                         
 
-                       tally    1                                tally    2                                tally    6
+                       tally    1                                tally    2                                tally    4
           nps      mean     error   vov  slope    fom      mean     error   vov  slope    fom      mean     error   vov  slope    fom
-        50000   6.5355E-01 0.0036 0.0001  5.3  816740   1.8936E-03 0.0093 0.0042 10.0  123410   7.7676E+01 0.0046 0.0005  4.6  509050
-       100000   6.5844E-01 0.0021 0.0000 10.0  817967   1.9345E-03 0.0056 0.0017  3.3  110816   7.7328E+01 0.0027 0.0002 10.0  499846
-       150000   6.5835E-01 0.0016 0.0000 10.0  815140   1.9382E-03 0.0044 0.0010 10.0  109012   7.7522E+01 0.0020 0.0001 10.0  501801
-       200000   6.5831E-01 0.0014 0.0000 10.0  816600   1.9420E-03 0.0037 0.0007 10.0  107096   7.7463E+01 0.0017 0.0001 10.0  503494
-       250000   6.5923E-01 0.0012 0.0000 10.0  824489   1.9425E-03 0.0033 0.0006 10.0  109028   7.7396E+01 0.0015 0.0001  8.3  502632
-       300000   6.5865E-01 0.0011 0.0000 10.0  821724   1.9393E-03 0.0030 0.0005 10.0  107742   7.7364E+01 0.0014 0.0000 10.0  507016
-       350000   6.5860E-01 0.0010 0.0000 10.0  820745   1.9400E-03 0.0027 0.0004 10.0  107762   7.7292E+01 0.0013 0.0000 10.0  508847
-       400000   6.5860E-01 0.0009 0.0000 10.0  821510   1.9360E-03 0.0025 0.0003 10.0  109059   7.7298E+01 0.0012 0.0000 10.0  508737
-       450000   6.5873E-01 0.0009 0.0000 10.0  822763   1.9368E-03 0.0024 0.0003 10.0  108694   7.7299E+01 0.0011 0.0000 10.0  509833
-       500000   6.5880E-01 0.0008 0.0000 10.0  820622   1.9400E-03 0.0023 0.0003 10.0  107878   7.7328E+01 0.0010 0.0000  7.6  507847
-       500684   6.5877E-01 0.0008 0.0000 10.0  820642   1.9401E-03 0.0023 0.0003 10.0  107861   7.7329E+01 0.0010 0.0000  7.6  507838
+        50000   6.5355E-01 0.0036 0.0001  5.3  781825   1.8936E-03 0.0093 0.0042 10.0  118134   2.5125E-04 0.0049 0.0005 10.0  426627
+       100000   6.5844E-01 0.0021 0.0000 10.0  779676   1.9345E-03 0.0056 0.0017  3.3  105629   2.5033E-04 0.0028 0.0002 10.0  415063
+       150000   6.5835E-01 0.0016 0.0000 10.0  780157   1.9382E-03 0.0044 0.0010 10.0  104333   2.5105E-04 0.0022 0.0001 10.0  417430
+       200000   6.5831E-01 0.0014 0.0000 10.0  783191   1.9420E-03 0.0037 0.0007 10.0  102714   2.5083E-04 0.0019 0.0001 10.0  419345
+       250000   6.5923E-01 0.0012 0.0000 10.0  789732   1.9425E-03 0.0033 0.0006 10.0  104432   2.5066E-04 0.0016 0.0001 10.0  417351
+       300000   6.5865E-01 0.0011 0.0000 10.0  786342   1.9393E-03 0.0030 0.0005 10.0  103103   2.5051E-04 0.0015 0.0000  9.3  420791
+       350000   6.5860E-01 0.0010 0.0000 10.0  784664   1.9400E-03 0.0027 0.0004 10.0  103024   2.5026E-04 0.0014 0.0000  7.2  421754
+       400000   6.5860E-01 0.0009 0.0000 10.0  785420   1.9360E-03 0.0025 0.0003 10.0  104268   2.5025E-04 0.0013 0.0000 10.0  421966
+       450000   6.5873E-01 0.0009 0.0000 10.0  786530   1.9368E-03 0.0024 0.0003 10.0  103907   2.5027E-04 0.0012 0.0000 10.0  422406
+       500000   6.5880E-01 0.0008 0.0000 10.0  785156   1.9400E-03 0.0023 0.0003 10.0  103216   2.5040E-04 0.0011 0.0000  9.0  421029
+       500684   6.5877E-01 0.0008 0.0000 10.0  785176   1.9401E-03 0.0023 0.0003 10.0  103200   2.5040E-04 0.0011 0.0000  9.0  421030
  
 
-                       tally   16
-          nps      mean     error   vov  slope    fom
-        50000   7.7676E-01 0.0046 0.0005  4.6  509050
-       100000   7.7328E-01 0.0027 0.0002 10.0  499846
-       150000   7.7522E-01 0.0020 0.0001 10.0  501801
-       200000   7.7463E-01 0.0017 0.0001 10.0  503494
-       250000   7.7396E-01 0.0015 0.0001  8.3  502632
-       300000   7.7364E-01 0.0014 0.0000 10.0  507016
-       350000   7.7292E-01 0.0013 0.0000 10.0  508847
-       400000   7.7298E-01 0.0012 0.0000 10.0  508737
-       450000   7.7299E-01 0.0011 0.0000 10.0  509833
-       500000   7.7328E-01 0.0010 0.0000  7.6  507847
-       500684   7.7329E-01 0.0010 0.0000  7.6  507838
+                       tally    6                                tally   14                                tally   16
+          nps      mean     error   vov  slope    fom      mean     error   vov  slope    fom      mean     error   vov  slope    fom
+        50000   7.7676E+01 0.0046 0.0005  4.6  487288   3.3647E-05 0.0365 0.0071 10.0    7714   7.7676E-01 0.0046 0.0005  4.6  487288
+       100000   7.7328E+01 0.0027 0.0002 10.0  476447   3.3528E-05 0.0208 0.0023 10.0    7755   7.7328E-01 0.0027 0.0002 10.0  476447
+       150000   7.7522E+01 0.0020 0.0001 10.0  480266   3.3505E-05 0.0161 0.0014 10.0    7757   7.7522E-01 0.0020 0.0001 10.0  480266
+       200000   7.7463E+01 0.0017 0.0001 10.0  482895   3.3517E-05 0.0135 0.0010 10.0    7836   7.7463E-01 0.0017 0.0001 10.0  482895
+       250000   7.7396E+01 0.0015 0.0001  8.3  481443   3.3727E-05 0.0119 0.0008 10.0    7889   7.7396E-01 0.0015 0.0001  8.3  481443
+       300000   7.7364E+01 0.0014 0.0000 10.0  485185   3.3653E-05 0.0108 0.0006 10.0    7906   7.7364E-01 0.0014 0.0000 10.0  485185
+       350000   7.7292E+01 0.0013 0.0000 10.0  486478   3.3697E-05 0.0099 0.0005 10.0    7945   7.7292E-01 0.0013 0.0000 10.0  486478
+       400000   7.7298E+01 0.0012 0.0000 10.0  486388   3.3672E-05 0.0091 0.0004 10.0    7995   7.7298E-01 0.0012 0.0000 10.0  486388
+       450000   7.7299E+01 0.0011 0.0000 10.0  487380   3.3545E-05 0.0086 0.0004 10.0    7979   7.7299E-01 0.0011 0.0000 10.0  487380
+       500000   7.7328E+01 0.0010 0.0000  7.6  485899   3.3622E-05 0.0081 0.0004 10.0    7976   7.7328E-01 0.0010 0.0000  7.6  485899
+       500684   7.7329E+01 0.0010 0.0000  7.6  485891   3.3622E-05 0.0081 0.0004 10.0    7977   7.7329E-01 0.0010 0.0000  7.6  485891
 
  ***********************************************************************************************************************
- dump no.    2 on file bor.runt     nps =      500684     coll =        3467703     ctm =        1.91   nrn =          47560501
+ dump no.    2 on file bor.runt     nps =      500684     coll =        3467703     ctm =        2.00   nrn =          47560501
 
 
          5 warning messages so far.
@@ -2009,6 +2152,6 @@
 
 
 
- computer time =    2.70 minutes
+ computer time =    2.76 minutes
 
- mcb      version 5.mpi 05042024                     01/21/25 21:46:55                     probid =  01/21/25 21:46:49 
+ mcb      version 5.mpi 05042024                     01/21/25 23:26:14                     probid =  01/21/25 23:26:09 
