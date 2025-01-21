@@ -1,0 +1,37 @@
+#!/bin/bash
+## Grant 
+#SBATCH -A plgmcbkej16-cpu 
+##
+##    NOW
+##
+## Partition  / Specyfikacja partycji
+#SBATCH -p plgrid-now
+#SBATCH -J now
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=48
+#SBATCH --time=12:00:00
+#SBATCH --error="now.err"
+#SBATCH --output="now.out"
+#SBATCH --mail-type=ALL
+## mail as option
+#SBATCH --mail-user=
+
+#SETUP START
+
+# load module
+module add openmpi/4.1.2-intel-compilers-2021.4.0
+# Settings for Open MPI and MXM (MellanoX Messaging) library
+export MXM_LOG_LEVEL=ERROR
+
+## MCB executable
+MCB=/net/pr2/projects/plgrid/plggmcb/FIX/bin/mcb5.mpi
+MCB_NEW=/net/pr2/projects/plgrid/plggmcb/FIX/bin/mcb5_new.mpi
+
+# stay in the directory
+cd $SLURM_SUBMIT_DIR
+#SETUP END
+
+# running
+
+time mpiexec $MCB  n=bor > bor.tty
+

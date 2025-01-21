@@ -1,0 +1,40 @@
+  MJV3B_HTR Model:  30 MWth,  Created: 2022.11.03
+  Applies also for Pola 
+  entire core is modeled: inlet presure 6 MPa 
+  base case - standard column refueling
+  temp rise = 0.3 of core avg. temp rise, bypass flow 0.07
+  loss coefficients from sniffs analysis
+  dif3d moc radial shape profile, equilibrium cycle
+  flow 13.6 kg/s (card 4)
+  Core zoning: 7 radial regions, 6 block layers, 24 axial zones
+  coolant inlet temp = 325 C
+  tfgap = 800 C
+
+1.           0.          0.          0.         1.                        CARD 2.1
+325.0       -870.227    -1.         -1.         0.3                       CARD 2.2 *
+0.07        -1.0        1.46        3.60         1.46                     CARD 2.3 *
+1000.       0.0         1.11        1.23        -386.3                    CARD 2.4 *
+-1.242      .02         .8          .4          4.364                     CARD 2.5 *
+1.917e-7    .674        .00129      .674        2000.                     CARD 2.7
+4000.       50.         5.e-5                                             CARD 2.8
+   3                                                                      CARD 2.9
+2000.0      4000.0      10000.0                                           CARD 2.10
+16.0        -1.0                                                          CARD 2.11
+7.3458e-4    0.31416                                                      CARD 2.11
+0.0791      -0.25                                                         CARD 2.11
+0.0195      -0.0985                                                       CARD 2.11
+   1   2   2   3   1   1   0   1   0   0   2   2   3                      CARD 3
+13.6                                                                      CARD 4   *
+105.        330.        378.        465.        354.        78.           CARD 10
+213.                                                                      CARD 10
+-1.0        -1.0        -.2520      -.3150      -.740157    0.1           CARD 12.1
+800.0       0.0125                                                        CARD 12.2
+0.08        0.00        0.00        0.00        0.08        0.00          CARD 14
+0.00        0.00        0.08        0.00        0.00        0.00          CARD 14
+0.08        0.00        0.00        0.00        0.08        0.00          CARD 14
+0.00        0.00        0.08        0.00        0.00        0.00          CARD 14
+-10.0                                                                     CARD 17
+105.        330.        378.        465.        354.        78.           CARD 18
+213.                                                                      CARD 18
+   1   0   0  -.311647  -.164913    -.311647    -.164913                  CARD 19
+   1   0   0   0   0    -.311647    -.164913    -.164913                  CARD 20

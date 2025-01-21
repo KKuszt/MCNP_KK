@@ -1,0 +1,32 @@
+C
+c  TALLIES for calculation of fast fluence 
+c
+c
+fc6 Heating per Neutron   HpN
+f6:n 9000
+sd6  1
+c
+fc16 Actual Core Power (ACP) [MW] TCP=30MW HpN=100 MeV/n
+c  FM=TCP/HpN=0.3
+c  S=TCP/HpP/1.602e-19= 1.8727e18
+f16:n  9000
+fm16:n 0.3
+sd16    1
+c
+c
+c  Fluence during one year 
+c  md=S*T  T(100% of 1 YEAR)=3.15e7 [s]  
+c  S=TCP/HpP/1.602e-19= 1.8727e18
+c  MD=5.8987e25
+c
+fc4 Fluence on blocks
+f4:n  (50<1002[ 0 0 0]<9103<9000)           $ U=100 
+       (60<1002[ 0 -1 0]<9103<9000)          $ U=201 
+       (70<1002[ 0 -2 0]<9103<9000)          $ U=301
+       (9125<1002[ 0 -4 0]<9103<9000)          $ U=99
+       (9125<1002[ 0 -5 0]<9103<9000)          $ U=99
+fm4   5.8987e25
+sd4   6.809e4 29R
+fs4   108 118 128 138 148 
+c
+e0    0.1    20. 

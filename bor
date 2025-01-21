@@ -15,3 +15,4 @@ kcode 50000 1.0 5 100
 ksrc 0 0 0
 C Tally Cards
 F1:n 1 2
+C1:n -1 0 1

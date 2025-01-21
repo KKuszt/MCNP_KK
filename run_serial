@@ -1,0 +1,158 @@
+#!/bin/bash
+#SBATCH -J N48
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=48
+#SBATCH --time=12:00:00 
+## Grant 
+#SBATCH -A plgmcbkej16-cpu
+## Partition  / Specyfikacja partycji
+#SBATCH -p plgrid-now
+#SBATCH --error="ser.err"
+#SBATCH --output="ser.out"
+#SBATCH --mail-type=ALL
+## mail as option
+#SBATCH --mail-user=
+
+#SETUP START
+
+# load module
+module add openmpi/4.1.2-intel-compilers-2021.4.0
+# Settings for Open MPI and MXM (MellanoX Messaging) library
+export MXM_LOG_LEVEL=ERROR
+
+## SEN executable
+SEN=/net/pr2/projects/plgrid/plggmcb/FIX/bin/sen
+
+## MCB executable
+MCB=/net/pr2/projects/plgrid/plggmcb/FIX/bin/mcb5.mpi
+
+# stay in the directory
+cd $SLURM_SUBMIT_DIR
+#SETUP END
+
+# running
+
+
+$SEN  flag = FLAG_1  > sen1.tty
+time mpiexec $MCB  n=a1  > a1.tty
+
+$SEN  flag = FLAG_2  > sen2.tty
+time mpiexec $MCB  n=a2  > a2.tty
+
+$SEN  flag = FLAG_3  > sen3.tty
+time mpiexec $MCB  n=a3  > a3.tty
+
+$SEN  flag = FLAG_4  > sen4.tty
+time mpiexec $MCB  n=a4  > a4.tty
+
+$SEN  flag = FLAG_5  > sen5.tty
+time mpiexec $MCB  n=a5  > a5.tty
+
+$SEN  flag = FLAG_6  > sen6.tty
+time mpiexec $MCB  n=a6  > a6.tty
+
+$SEN  flag = FLAG_7  > sen7.tty
+time mpiexec $MCB  n=a7  > a7.tty
+
+$SEN  flag = FLAG_8  > sen8.tty
+time mpiexec $MCB  n=a8  > a8.tty
+
+$SEN  flag = FLAG_9  > sen9.tty
+time mpiexec $MCB  n=a9  > a9.tty
+
+$SEN  flag = FLAG_10  > sen10.tty
+
+time mpiexec $MCB  n=a10  > a10.tty
+
+$SEN  flag = FLAG_11 > sen11.tty
+
+time mpiexec $MCB  n=a11  > a11.tty
+
+$SEN  flag = FLAG_12  > sen12.tty
+time mpiexec $MCB  n=a12  > a12.tty
+
+$SEN  flag = FLAG_13  > sen13.tty
+time mpiexec $MCB  n=a13  > a13.tty
+
+$SEN  flag = FLAG_14  > sen14.tty
+time mpiexec $MCB  n=a14  > a14.tty
+
+$SEN  flag = FLAG_15  > sen15.tty
+time mpiexec $MCB  n=a15  > a15.tty
+
+$SEN  flag = FLAG_16  > sen16.tty
+time mpiexec $MCB  n=a16  > a16.tty
+
+$SEN  flag = FLAG_17  > sen17.tty
+time mpiexec $MCB  n=a17  > a17.tty
+
+$SEN  flag = FLAG_18  > sen18.tty
+time mpiexec $MCB  n=a18  > a18.tty
+
+$SEN  flag = FLAG_19  > sen19.tty
+time mpiexec $MCB  n=a19  > a19.tty
+
+$SEN  flag = FLAG_20  > sen20.tty
+time mpiexec $MCB  n=a20  > a20.tty
+
+$SEN  flag = FLAG_21  > sen21.tty
+time mpiexec $MCB  n=a21  > a21.tty
+
+$SEN  flag = FLAG_22  > sen22.tty
+time mpiexec $MCB  n=a22  > a22.tty
+
+$SEN  flag = FLAG_23  > sen23.tty
+time mpiexec $MCB  n=a23  > a23.tty
+
+$SEN  flag = FLAG_24  > sen24.tty
+time mpiexec $MCB  n=a24  > a24.tty
+
+$SEN  flag = FLAG_25  > sen25.tty
+time mpiexec $MCB  n=a25  > a25.tty
+
+$SEN  flag = FLAG_26  > sen26.tty
+time mpiexec $MCB  n=a26  > a26.tty
+
+$SEN  flag = FLAG_27  > sen27.tty
+time mpiexec $MCB  n=a27  > a27.tty
+
+$SEN  flag = FLAG_28  > sen28.tty
+time mpiexec $MCB  n=a28  > a28.tty
+
+$SEN  flag = FLAG_29  > sen29.tty
+time mpiexec $MCB  n=a29  > a29.tty
+
+$SEN  flag = FLAG_30  > sen30.tty
+time mpiexec $MCB  n=a30  > a30.tty
+ 
+$SEN  flag = FLAG_31  > sen31.tty
+time mpiexec $MCB  n=a31  > a31.tty
+
+$SEN  flag = FLAG_32  > sen32.tty
+time mpiexec $MCB  n=a32  > a32.tty
+
+$SEN  flag = FLAG_33  > sen33.tty
+time mpiexec $MCB  n=a33  > a33.tty
+
+$SEN  flag = FLAG_34  > sen34.tty
+time mpiexec $MCB  n=a34  > a34.tty
+
+$SEN  flag = FLAG_35  > sen35.tty
+time mpiexec $MCB  n=a35  > a35.tty
+
+$SEN  flag = FLAG_36  > sen36.tty
+time mpiexec $MCB  n=a36  > a36.tty
+
+$SEN  flag = FLAG_37  > sen37.tty
+time mpiexec $MCB  n=a37  > a37.tty
+
+$SEN  flag = FLAG_38  > sen38.tty
+time mpiexec $MCB  n=a38  > a38.tty
+
+$SEN  flag = FLAG_39  > sen39.tty
+time mpiexec $MCB  n=a39  > a29.tty
+
+$SEN  flag = FLAG_40  > sen40.tty
+time mpiexec $MCB  n=a40  > a40.tty
+
+module purge
