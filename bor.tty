@@ -1,0 +1,284 @@
+ mcb      ver=5.mpi, ld=05042024  01/21/25 21:46:49                   
+          Thread Name & Version = MCNP5_RSICC, 1.40
+          MCB copyright Jerzy Cetnar 
+          MCNP copyright LANL/UC/DOE - see output file
+                                _                                      
+               ._ _    _  |_   |_                                      
+               | | |  (_  |_|   _)                                     
+                                                                       
+  
+ 
+ comment. total fission nubar data are being used.
+ warning.   1 materials had unnormalized fractions. print table 40.
+ comment. using random number generator  1, initial seed = 19073486328125      
+ imcn   is done
+
+ warning.  92235.03c lacks delayed neutron cross sections.
+ saving runtpe file
+ writing fixed data and first dump on runtpe
+ dump    1 on file bor.runt   nps =           0    coll =              0
+                              ctm =        0.00   nrn =                 0
+  source distribution written to file bor.srctp cycle =0
+ xact   is done
+
+ cp0 =     0.03
+ master starting      47 tasks with       1 threads each  01/21/25 21:46:52 
+ master initializing buffer...
+ master sending static commons...
+ master sending static burnup commons...
+ master sending dynamic commons...
+ master sending cross section data...
+ master completed initialization broadcasts.
+ master set rendezvous nps =         200    01/21/25 21:46:52 
+ master set rendezvous nps =        5000    01/21/25 21:46:52 
+
+ comment.
+ comment. entropy of the fission source distribution will be computed
+ comment.
+ comment. the mesh for source entropy is based on the site coordinates
+ comment.   using  6 x  6 x  6 =   216  mesh cells
+ comment.
+ comment.     Xmin= -1.0573E+01     Xmax=  1.0555E+01
+ comment.     Ymin= -1.0522E+01     Ymax=  1.0556E+01
+ comment.     Zmin= -1.0473E+01     Zmax=  1.0493E+01
+ comment.
+ comment. the mesh will be automatically expanded if necessary to
+ comment.   encompass the entire fission source distribution
+ comment.
+
+
+ cycle    k(col)       ctm   entropy    active     k(col)    std dev        fom
+     1   1.38907        0.02    5.03E+00
+ master set rendezvous nps =       11985    01/21/25 21:46:52 
+     2   1.18939        0.05    5.56E+00
+ master set rendezvous nps =       16270    01/21/25 21:46:52 
+     3   1.11016        0.06    5.72E+00
+ master set rendezvous nps =       20943    01/21/25 21:46:52 
+     4   1.07013        0.08    5.76E+00
+ master set rendezvous nps =       25781    01/21/25 21:46:52 
+     5   1.05737        0.10    5.80E+00
+ ********************  begin active keff cycles  *********************
+ master set rendezvous nps =       30640    01/21/25 21:46:52 
+     6   1.04790        0.12    5.82E+00
+ master set rendezvous nps =       35538    01/21/25 21:46:52 
+     7   1.06656        0.14    5.79E+00         2    1.05723    0.00933     340198
+ master set rendezvous nps =       40688    01/21/25 21:46:52 
+     8   1.04911        0.16    5.81E+00         3    1.05453    0.00603     533133
+ master set rendezvous nps =       45648    01/21/25 21:46:52 
+     9   1.05868        0.18    5.80E+00         4    1.05557    0.00439     757733
+ master set rendezvous nps =       50000    01/21/25 21:46:52 
+ master set rendezvous nps =       50765    01/21/25 21:46:52 
+    10   1.04932        0.20    5.79E+00         5    1.05432    0.00362     883557
+ master set rendezvous nps =       55731    01/21/25 21:46:52 
+    11   1.03978        0.22    5.80E+00         6    1.05189    0.00382     658431
+ master set rendezvous nps =       60821    01/21/25 21:46:52 
+    12   1.04070        0.24    5.81E+00         7    1.05029    0.00360     630197
+ master set rendezvous nps =       65744    01/21/25 21:46:52 
+    13   1.04776        0.25    5.83E+00         8    1.04998    0.00314     729254
+ master set rendezvous nps =       70680    01/21/25 21:46:52 
+    14   1.03621        0.27    5.81E+00         9    1.04845    0.00316     637668
+ master set rendezvous nps =       75693    01/21/25 21:46:52 
+    15   1.02687        0.29    5.83E+00        10    1.04629    0.00356     452010
+ master set rendezvous nps =       80655    01/21/25 21:46:52 
+    16   1.05433        0.31    5.82E+00        11    1.04702    0.00330     478730
+ master set rendezvous nps =       85738    01/21/25 21:46:52 
+    17   1.05117        0.33    5.84E+00        12    1.04737    0.00303     519557
+ master set rendezvous nps =       90604    01/21/25 21:46:52 
+    18   1.07058        0.35    5.85E+00        13    1.04915    0.00331     403932
+ master set rendezvous nps =       95670    01/21/25 21:46:52 
+    19   1.03910        0.37    5.82E+00        14    1.04843    0.00315     414250
+ master set rendezvous nps =      100000    01/21/25 21:46:53 
+ master set rendezvous nps =      100520    01/21/25 21:46:53 
+    20   1.04299        0.39    5.85E+00        15    1.04807    0.00295     440153
+ master set rendezvous nps =      105597    01/21/25 21:46:53 
+    21   1.03514        0.41    5.80E+00        16    1.04726    0.00288     433859
+ master set rendezvous nps =      110522    01/21/25 21:46:53 
+    22   1.05669        0.43    5.82E+00        17    1.04782    0.00276     444151
+ master set rendezvous nps =      115592    01/21/25 21:46:53 
+    23   1.04548        0.44    5.80E+00        18    1.04769    0.00261     470182
+ master set rendezvous nps =      120532    01/21/25 21:46:53 
+    24   1.02986        0.46    5.78E+00        19    1.04675    0.00264     434718
+ master set rendezvous nps =      125406    01/21/25 21:46:53 
+    25   1.05299        0.48    5.79E+00        20    1.04706    0.00252     452465
+ master set rendezvous nps =      130501    01/21/25 21:46:53 
+    26   1.05642        0.50    5.79E+00        21    1.04751    0.00244     459824
+ master set rendezvous nps =      135495    01/21/25 21:46:53 
+    27   1.05398        0.52    5.77E+00        22    1.04780    0.00234     475596
+ master set rendezvous nps =      140492    01/21/25 21:46:53 
+    28   1.06429        0.54    5.81E+00        23    1.04852    0.00235     452202
+ master set rendezvous nps =      145528    01/21/25 21:46:53 
+    29   1.04122        0.56    5.81E+00        24    1.04821    0.00227     464030
+ master set rendezvous nps =      150000    01/21/25 21:46:53 
+ master set rendezvous nps =      150362    01/21/25 21:46:53 
+    30   1.05313        0.58    5.81E+00        25    1.04841    0.00219     481209
+ master set rendezvous nps =      155362    01/21/25 21:46:53 
+    31   1.05033        0.60    5.81E+00        26    1.04849    0.00210     500270
+ master set rendezvous nps =      160378    01/21/25 21:46:53 
+    32   1.02740        0.62    5.82E+00        27    1.04770    0.00217     452541
+ master set rendezvous nps =      165208    01/21/25 21:46:53 
+    33   1.04895        0.63    5.84E+00        28    1.04775    0.00209     470145
+ master set rendezvous nps =      170318    01/21/25 21:46:53 
+    34   1.03192        0.65    5.84E+00        29    1.04720    0.00209     453957
+ master set rendezvous nps =      175239    01/21/25 21:46:53 
+    35   1.03308        0.67    5.78E+00        30    1.04673    0.00207     445881
+ master set rendezvous nps =      180203    01/21/25 21:46:53 
+    36   1.04777        0.69    5.81E+00        31    1.04677    0.00201     460991
+ master set rendezvous nps =      185239    01/21/25 21:46:53 
+    37   1.05216        0.71    5.81E+00        32    1.04693    0.00195     472753
+ master set rendezvous nps =      190239    01/21/25 21:46:53 
+    38   1.06442        0.73    5.81E+00        33    1.04746    0.00196     452774
+ master set rendezvous nps =      195314    01/21/25 21:46:53 
+    39   1.05989        0.75    5.80E+00        34    1.04783    0.00194     450169
+ master set rendezvous nps =      200000    01/21/25 21:46:53 
+ master set rendezvous nps =      200381    01/21/25 21:46:53 
+    40   1.04372        0.77    5.81E+00        35    1.04771    0.00189     461761
+ master set rendezvous nps =      205414    01/21/25 21:46:53 
+    41   1.03961        0.79    5.82E+00        36    1.04749    0.00185     467828
+ master set rendezvous nps =      210416    01/21/25 21:46:53 
+    42   1.03508        0.81    5.80E+00        37    1.04715    0.00183     464871
+ master set rendezvous nps =      215529    01/21/25 21:46:53 
+    43   1.03171        0.83    5.80E+00        38    1.04675    0.00182     453446
+ master set rendezvous nps =      220509    01/21/25 21:46:53 
+    44   1.04865        0.85    5.83E+00        39    1.04679    0.00178     465236
+ master set rendezvous nps =      225534    01/21/25 21:46:53 
+    45   1.03050        0.86    5.81E+00        40    1.04639    0.00178     452240
+ master set rendezvous nps =      230572    01/21/25 21:46:53 
+    46   1.04090        0.88    5.83E+00        41    1.04625    0.00174     461008
+ master set rendezvous nps =      235591    01/21/25 21:46:53 
+    47   1.04424        0.90    5.82E+00        42    1.04620    0.00170     472182
+ master set rendezvous nps =      240629    01/21/25 21:46:53 
+    48   1.04581        0.92    5.81E+00        43    1.04620    0.00166     483612
+ master set rendezvous nps =      245513    01/21/25 21:46:53 
+    49   1.03971        0.94    5.83E+00        44    1.04605    0.00163     491261
+ master set rendezvous nps =      250000    01/21/25 21:46:53 
+ master set rendezvous nps =      250479    01/21/25 21:46:54 
+    50   1.04884        0.96    5.82E+00        45    1.04611    0.00159     502043
+ master set rendezvous nps =      255640    01/21/25 21:46:54 
+    51   1.04812        0.98    5.82E+00        46    1.04615    0.00156     512740
+ master set rendezvous nps =      260646    01/21/25 21:46:54 
+    52   1.03068        1.00    5.83E+00        47    1.04582    0.00156     500757
+ master set rendezvous nps =      265468    01/21/25 21:46:54 
+    53   1.04842        1.02    5.78E+00        48    1.04588    0.00153     511524
+ master set rendezvous nps =      270533    01/21/25 21:46:54 
+    54   1.04896        1.04    5.80E+00        49    1.04594    0.00150     521210
+ master set rendezvous nps =      275505    01/21/25 21:46:54 
+    55   1.05327        1.06    5.77E+00        50    1.04609    0.00148     526930
+ master set rendezvous nps =      280495    01/21/25 21:46:54 
+    56   1.04898        1.07    5.79E+00        51    1.04615    0.00145     536844
+ master set rendezvous nps =      285395    01/21/25 21:46:54 
+    57   1.04489        1.09    5.81E+00        52    1.04612    0.00142     547588
+ master set rendezvous nps =      290385    01/21/25 21:46:54 
+    58   1.04175        1.11    5.79E+00        53    1.04604    0.00139     556500
+ master set rendezvous nps =      295362    01/21/25 21:46:54 
+    59   1.05382        1.13    5.81E+00        54    1.04618    0.00138     561283
+ master set rendezvous nps =      300000    01/21/25 21:46:54 
+ master set rendezvous nps =      300463    01/21/25 21:46:54 
+    60   1.07120        1.15    5.78E+00        55    1.04664    0.00143     514060
+ master set rendezvous nps =      305589    01/21/25 21:46:54 
+    61   1.05738        1.17    5.81E+00        56    1.04683    0.00141     513951
+ master set rendezvous nps =      310482    01/21/25 21:46:54 
+    62   1.05724        1.19    5.82E+00        57    1.04701    0.00140     514740
+ master set rendezvous nps =      315525    01/21/25 21:46:54 
+    63   1.03494        1.21    5.82E+00        58    1.04680    0.00139     511709
+ master set rendezvous nps =      320475    01/21/25 21:46:54 
+    64   1.04693        1.23    5.83E+00        59    1.04681    0.00137     520755
+ master set rendezvous nps =      325472    01/21/25 21:46:54 
+    65   1.04642        1.25    5.85E+00        60    1.04680    0.00134     529636
+ master set rendezvous nps =      330580    01/21/25 21:46:54 
+    66   1.05077        1.27    5.81E+00        61    1.04686    0.00132     537104
+ master set rendezvous nps =      335517    01/21/25 21:46:54 
+    67   1.02900        1.28    5.82E+00        62    1.04658    0.00133     520504
+ master set rendezvous nps =      340373    01/21/25 21:46:54 
+    68   1.03498        1.30    5.83E+00        63    1.04639    0.00133     519043
+ master set rendezvous nps =      345351    01/21/25 21:46:54 
+    69   1.03646        1.32    5.81E+00        64    1.04624    0.00131     519952
+ master set rendezvous nps =      350000    01/21/25 21:46:54 
+ master set rendezvous nps =      350445    01/21/25 21:46:54 
+    70   1.03786        1.34    5.84E+00        65    1.04611    0.00130     522778
+ master set rendezvous nps =      355481    01/21/25 21:46:54 
+    71   1.03909        1.36    5.81E+00        66    1.04600    0.00128     527045
+ master set rendezvous nps =      360452    01/21/25 21:46:54 
+    72   1.04986        1.38    5.82E+00        67    1.04606    0.00127     534249
+ master set rendezvous nps =      365467    01/21/25 21:46:54 
+    73   1.04234        1.40    5.82E+00        68    1.04600    0.00125     541085
+ master set rendezvous nps =      370376    01/21/25 21:46:54 
+    74   1.05992        1.42    5.81E+00        69    1.04621    0.00125     535137
+ master set rendezvous nps =      375526    01/21/25 21:46:54 
+    75   1.04016        1.44    5.82E+00        70    1.04612    0.00123     540118
+ master set rendezvous nps =      380418    01/21/25 21:46:54 
+    76   1.05484        1.45    5.81E+00        71    1.04624    0.00122     542606
+ master set rendezvous nps =      385485    01/21/25 21:46:54 
+    77   1.03549        1.47    5.78E+00        72    1.04609    0.00121     541750
+ master set rendezvous nps =      390414    01/21/25 21:46:54 
+    78   1.03756        1.49    5.82E+00        73    1.04598    0.00120     544330
+ master set rendezvous nps =      395450    01/21/25 21:46:54 
+    79   1.03842        1.51    5.84E+00        74    1.04587    0.00119     547685
+ master set rendezvous nps =      400000    01/21/25 21:46:54 
+ master set rendezvous nps =      400460    01/21/25 21:46:55 
+    80   1.03310        1.53    5.83E+00        75    1.04570    0.00119     543638
+ master set rendezvous nps =      405441    01/21/25 21:46:55 
+    81   1.03748        1.55    5.78E+00        76    1.04560    0.00118     546344
+ master set rendezvous nps =      410504    01/21/25 21:46:55 
+    82   1.05466        1.57    5.81E+00        77    1.04571    0.00117     547972
+ master set rendezvous nps =      415582    01/21/25 21:46:55 
+    83   1.05588        1.59    5.79E+00        78    1.04584    0.00116     548298
+ master set rendezvous nps =      420616    01/21/25 21:46:55 
+    84   1.02042        1.61    5.83E+00        79    1.04552    0.00119     514462
+ master set rendezvous nps =      425490    01/21/25 21:46:55 
+    85   1.04640        1.63    5.83E+00        80    1.04553    0.00117     521196
+ master set rendezvous nps =      430568    01/21/25 21:46:55 
+    86   1.03587        1.64    5.80E+00        81    1.04541    0.00116     522041
+ master set rendezvous nps =      435518    01/21/25 21:46:55 
+    87   1.04800        1.66    5.80E+00        82    1.04545    0.00115     528119
+ master set rendezvous nps =      440491    01/21/25 21:46:55 
+    88   1.03534        1.68    5.77E+00        83    1.04532    0.00114     528463
+ master set rendezvous nps =      445541    01/21/25 21:46:55 
+    89   1.05262        1.70    5.81E+00        84    1.04541    0.00113     531651
+ master set rendezvous nps =      450000    01/21/25 21:46:55 
+ master set rendezvous nps =      450752    01/21/25 21:46:55 
+    90   1.05844        1.72    5.81E+00        85    1.04556    0.00113     527954
+ master set rendezvous nps =      455842    01/21/25 21:46:55 
+    91   1.03745        1.74    5.82E+00        86    1.04547    0.00112     530263
+ master set rendezvous nps =      460677    01/21/25 21:46:55 
+    92   1.03718        1.76    5.83E+00        87    1.04537    0.00111     532626
+ master set rendezvous nps =      465640    01/21/25 21:46:55 
+    93   1.04275        1.78    5.80E+00        88    1.04534    0.00110     538271
+ master set rendezvous nps =      470722    01/21/25 21:46:55 
+    94   1.05220        1.80    5.84E+00        89    1.04542    0.00109     541723
+ master set rendezvous nps =      475695    01/21/25 21:46:55 
+    95   1.05050        1.82    5.80E+00        90    1.04548    0.00108     546423
+ master set rendezvous nps =      480714    01/21/25 21:46:55 
+    96   1.05562        1.84    5.81E+00        91    1.04559    0.00107     546642
+ master set rendezvous nps =      485683    01/21/25 21:46:55 
+    97   1.02676        1.86    5.80E+00        92    1.04538    0.00108     532667
+ master set rendezvous nps =      490541    01/21/25 21:46:55 
+    98   1.05115        1.88    5.84E+00        93    1.04545    0.00107     536844
+ master set rendezvous nps =      495664    01/21/25 21:46:55 
+    99   1.04476        1.90    5.81E+00        94    1.04544    0.00106     542481
+ master set rendezvous nps =      500000    01/21/25 21:46:55 
+ master set rendezvous nps =      500684    01/21/25 21:46:55 
+   100   1.05410        1.91    5.80E+00        95    1.04553    0.00105     544359
+  source distribution written to file bor.srctp cycle =100
+ run terminated when 100 kcode cycles were done." 
+ comment.
+ comment. Average fission-source entropy for the last half of cycles:
+ comment.      H=  5.81E+00  with population std.dev.=  1.82E-02
+ comment.
+ comment.
+ comment. Cycle    5 is the first cycle having fission-source
+ comment.   entropy within 1 std.dev. of the average
+ comment.   entropy for the last half of cycles.
+ comment.   At least this many cycles should be discarded.
+ comment.
+ comment. Source entropy convergence check passed. 
+ comment.
+
+ final k(col/abs/trk len) = 1.04552     std dev = 0.00099
+
+ warning. tally   6 tfc bin did not pass  1 of 10 statistical checks.
+ warning. tally  16 tfc bin did not pass  1 of 10 statistical checks.
+ warning.    2 of   4 tallies did not pass all 10 statistical checks.
+ dump    2 on file bor.runt   nps =      500684    coll =        3467703
+                              ctm =        1.91   nrn =          47560501
+ mcrun  is done
+
