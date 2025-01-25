@@ -26,16 +26,7 @@ f16:n  1 $ cell
 fm16:n 0.01293 $ multiplication factor
 sd16 1 $ nomalize
 F1:n 1 2
-F11:n 1 2
-F11m:n 8.0721547e16
-F2:n 1 2
-F4:n 1 2
+F4:n 1
 F14:n 1
-F24:n 2
-F14m:n -1 1 (-2:-6) $ 
-sd14 1838.78
-F14m:n 8.0721547e16
-F24m:n -2 2 (-2:-6) $
-sd24 2350.01
-F24m:n 8.0721547e16
-C11:n -1 0 1 $ in / out
+F14m:n 0.04791 1 (-2:-6)$ 
+C1:n -1 0 1 $ in / out

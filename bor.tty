@@ -1,4 +1,9 @@
- mcb      ver=5.mpi, ld=05042024  01/24/25 22:31:28                   
+ mcb      ver=5.mpi, ld=05042024  01/25/25 15:08:54                   
+ File with the user name: bor.outp already exists.
+ File with the user name: bor.runtpe already exists.
+ File with the user name: bor.srctp already exists.
+ bor.outp already exists.  bor.outq is created instead.
+ bor.outq already exists.  bor.outr is created instead.
           Thread Name & Version = MCNP5_RSICC, 1.40
           MCB copyright Jerzy Cetnar 
           MCNP copyright LANL/UC/DOE - see output file
@@ -7,16 +12,17 @@
                | | |  (_  |_|   _)                                     
                                                                        
   
- f14m:n 8.0721547e16                                                  
- fatal error.  data symbol f14m:n          is used more than once.
- f24m:n 8.0721547e16                                                  
- fatal error.  data symbol f24m:n          is used more than once.
+ bor.srctp already exists.  bor.srctq is created instead.
+ bor.srctq already exists.  bor.srctr is created instead.
  
  comment. total fission nubar data are being used.
+ fatal error.  fm card of tally  14 has wrong format.
  warning.   1 materials had unnormalized fractions. print table 40.
  comment. using random number generator  1, initial seed = 19073486328125      
  imcn   is done
 
+ bor.runtpe already exists.  bor.runtpf is created instead.
+ bor.runtpf already exists.  bor.runtpg is created instead.
  warning.  92235.03c lacks delayed neutron cross sections.
  xact   is done
 
